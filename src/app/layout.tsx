@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/site-header";
 import { company } from "@/content/company";
 import { allowSearchIndexing, homeTitle, siteOrigin } from "@/lib/site-metadata";
 import "./globals.css";
+import "./editorial.css";
 
 export const metadata: Metadata = {
   title: {

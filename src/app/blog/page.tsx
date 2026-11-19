@@ -1,9 +1,10 @@
-import { BookOpenText } from "lucide-react";
 import Link from "next/link";
+import { EditorialPhoto } from "@/components/editorial-photo";
 import { ArticleCard } from "@/components/blog/article-card";
 import { ArticleEmptyState } from "@/components/blog/article-empty-state";
 import { ArticleListing } from "@/components/blog/article-listing";
 import styles from "@/components/blog/blog.module.css";
+import { serviceImages } from "@/content/editorial-images";
 import { getPublishedArticles } from "@/lib/blog";
 import { makePageMetadata } from "@/lib/site-metadata";
 
@@ -28,9 +29,7 @@ export default function BlogPage() {
             <h1 id="blog-title">{title}</h1>
             <p className="hero-business">Editorial topics include industrial supplies, procurement, construction equipment and technology.</p>
           </div>
-          <div className={styles.heroIllustration} aria-hidden="true">
-            <span className={styles.heroIcon}><BookOpenText size={68} strokeWidth={1.25} /></span>
-          </div>
+          <EditorialPhoto image={serviceImages["procurement-project-support"]} className="page-hero-photo" priority />
         </div>
       </section>
 

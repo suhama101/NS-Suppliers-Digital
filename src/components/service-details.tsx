@@ -1,7 +1,6 @@
 import { ClipboardCheck, Files, ListChecks, Truck } from "lucide-react";
 import Link from "next/link";
-import { ProcurementApproach, ProductCards } from "@/components/supply-sections";
-import { company } from "@/content/company";
+import { ProcurementApproach, ProductCards, TyreSupply } from "@/components/supply-sections";
 import { itServiceAreas } from "@/content/it-services";
 import { productCategories, type ProductCategorySlug } from "@/content/products";
 import { serviceHref } from "@/content/services";
@@ -43,9 +42,10 @@ export function GeneralOrderSupplyDetails() {
             The firm sources hardware, industrial stores and commercial goods for institutional and project orders. The categories below cover general maintenance, packing and day-to-day operations.
           </p>
           <ProductCards categories={categories} />
-          <p className="section-description">{company.tyreSupply}</p>
         </div>
       </section>
+
+      <TyreSupply />
 
       <section className="section-space service-specifications" aria-labelledby="general-sourcing-title">
         <div className="site-container section-split">

@@ -89,4 +89,4 @@ After the client approves indexing:
 2. Build and deploy the approved release. Verify the public HTML has `index, follow`, check for any conflicting `X-Robots-Tag` headers, and confirm that canonical tags and the `robots.txt` sitemap URL use the intended origin.
 3. Verify the live `/sitemap.xml` and submit it through the client's search console if configured.
 
-The NS favicon at `src/app/favicon.ico` and sharing card at `public/images/ns-social-card.png` are provisional. Replace them with approved artwork when available. If the card filename, dimensions or visible content change, update its metadata in `src/lib/site-metadata.ts`.
+The header, footer, favicon and sharing card use the NS artwork extracted from the supplied company profile cover. The favicon and card are website adaptations. Confirm final brand approval and request the original logo artwork for future use. See the [content and imagery register](docs/content-and-imagery.md) for source coverage and visual asset provenance.

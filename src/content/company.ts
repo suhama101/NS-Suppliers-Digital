@@ -1,6 +1,7 @@
 export const company = {
   name: "M/S Noshirwan & Sons",
   businessType: "Government Contractor & General Order Supplier",
+  taxNumber: "7927069-4",
   description: "Government contractor and general order supplier based in Wah Cantt., supporting institutional, industrial and project procurement.",
   location: "Wah Cantt.",
   overview: "M/S Noshirwan & Sons supports government departments, defence and industrial organisations, and infrastructure projects. The firm sources and supplies goods against client specifications, approved quotations, purchase orders and agreed contract terms.",
@@ -8,6 +9,15 @@ export const company = {
   tyreSupply: "The firm can also source heavy-vehicle tyres, subject to quotation, client acceptance and availability.",
   commitment: "M/S Noshirwan & Sons aims to provide clear quotations, responsive coordination and supply services that follow each client’s agreed specifications and delivery conditions.",
 };
+
+export const heavyVehicleTyres = {
+  size: "1000/20",
+  options: [
+    { name: "Bridgestone tyre", note: "Branded option" },
+    { name: "Pakistani tyre", note: "Local-origin option" },
+    { name: "China-origin tyre", note: "China-origin option" },
+  ],
+} as const;
 
 export const capabilities = [
   {

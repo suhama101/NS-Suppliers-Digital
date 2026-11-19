@@ -14,7 +14,7 @@ const socialImage = {
   url: new URL("/images/ns-social-card.png", siteOrigin),
   width: 1200,
   height: 630,
-  alt: `${company.name} with a provisional NS monogram`,
+  alt: `${company.name} with the NS mark from the company profile`,
 };
 
 type PageMetadata = {

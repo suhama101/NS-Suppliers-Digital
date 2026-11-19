@@ -8,7 +8,7 @@ Use this checklist to record the client’s launch decisions for M/S Noshirwan &
 - [ ] **Maps and email.** Verify the exact office pin before enabling Maps. Confirm the official email spelling and test receipt before enabling email. The PDF prints `noshirwan900@gamil.com`. The client can approve a phone-only launch while these channels are pending.
 - [ ] **IT Services.** Approve what may be published, or explicitly approve keeping the current pending-scope notice at launch. Supply the approved service names and descriptions, who the services are for, what information an enquiry should include, and the preferred contact or engagement process.
 - [ ] **Launch origin and indexing.** Approve the Vercel URL or provide the final custom domain. Make a separate decision about search indexing. Set `SITE_URL` at build time for an approved custom domain and set `SITE_INDEXABLE=true` only for an approved indexable production build. Verify the live canonical tags, robots metadata, response headers and sitemap before announcing launch. Review builds default to `noindex, follow`.
-- [ ] **Branding sign-off.** Approve the official logo for website use or explicitly approve launching with the provisional NS monogram, favicon and sharing card.
+- [ ] **Branding sign-off.** Confirm the company profile mark and its favicon and sharing card adaptations for website use.
 
 ## Recommended improvements
 

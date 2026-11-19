@@ -1,14 +1,18 @@
 import { MapPin } from "lucide-react";
 import Link from "next/link";
+import { EditorialPhoto } from "@/components/editorial-photo";
 import { ServiceCards } from "@/components/service-presentation";
 import { ProductCards } from "@/components/supply-sections";
 import { company } from "@/content/company";
+import { warehouseImage } from "@/content/editorial-images";
 import { productCategories } from "@/content/products";
+import { serviceHref } from "@/content/services";
 
 export function HomeHero() {
   return (
-    <section className="home-hero" aria-labelledby="hero-title">
-      <div className="site-container hero-grid">
+    <section className="home-hero editorial-hero" aria-labelledby="hero-title">
+      <EditorialPhoto image={warehouseImage} className="editorial-hero-photo" hero priority />
+      <div className="site-container editorial-hero-inner">
         <div className="hero-copy">
           <p className="section-label">{company.name}</p>
           <h1 id="hero-title">Industrial supply.<br /> Procurement support.</h1>
@@ -22,17 +26,8 @@ export function HomeHero() {
             <a className="hero-portfolio-link" href="#product-portfolio">View Product Portfolio</a>
           </div>
         </div>
-        <div className="hero-art" aria-hidden="true">
-          <div className="art-frame" />
-          <div className="art-circle" />
-          <div className="art-crates">
-            <div className="art-crate art-crate-left"><i /><i /><i /></div>
-            <div className="art-crate art-crate-right"><i /><i /><i /></div>
-            <div className="art-crate art-crate-top"><i /><i /><i /></div>
-          </div>
-          <div className="art-ruler" />
-        </div>
       </div>
+      <small className="editorial-caption">Illustrative imagery</small>
     </section>
   );
 }
@@ -56,7 +51,10 @@ export function ProductHighlights() {
           <h2 id="products-title">Product Portfolio Highlights</h2>
           <p className="section-description">{company.portfolioSummary}</p>
         </div>
-        <ProductCards categories={productCategories} />
+        <ProductCards categories={productCategories} showLinks />
+        <Link className="text-link portfolio-detail-link" href={serviceHref("industrial-construction-supplies")}>
+          Explore the industrial supply range
+        </Link>
       </div>
     </section>
   );

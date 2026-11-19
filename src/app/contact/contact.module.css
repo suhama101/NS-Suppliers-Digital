@@ -6,26 +6,6 @@
   padding-block: clamp(2.65rem, 6vw, 4.75rem);
 }
 
-.heroArt {
-  display: grid;
-  place-items: center;
-  aspect-ratio: 1.75;
-}
-
-.locationSymbol {
-  display: grid;
-  width: clamp(5.5rem, 13vw, 8rem);
-  aspect-ratio: 1;
-  place-items: center;
-  border: 1px solid #86a8c3;
-  border-radius: 50%;
-  background: #0c355e;
-  color: var(--color-gold);
-  box-shadow: 0 0 0 .75rem #91b3d11a;
-}
-
-.locationSymbol svg { width: 55%; height: 55%; }
-
 .contactGrid, .channelGrid {
   display: grid;
   gap: clamp(1rem, 2vw, 1.5rem);
@@ -134,7 +114,6 @@
 
 @media (width < 48rem) {
   .hero, .contactGrid { grid-template-columns: minmax(0, 1fr); }
-  .heroArt { display: none; }
 }
 
 @media (width < 23rem) {

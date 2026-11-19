@@ -6,43 +6,6 @@
   padding-block: clamp(3rem, 7vw, 5rem);
 }
 
-.heroIllustration {
-  position: relative;
-  display: grid;
-  min-height: clamp(11rem, 20vw, 16rem);
-  place-items: center;
-  border: 1px solid #446785;
-  border-radius: .3rem;
-  background: #103a62;
-  isolation: isolate;
-}
-
-.heroIllustration::before, .heroIllustration::after {
-  position: absolute;
-  inset: .8rem;
-  z-index: -1;
-  border: 1px solid #ffffff2b;
-  border-radius: .2rem;
-  content: "";
-}
-
-.heroIllustration::after {
-  inset: 1.35rem;
-  border-left-color: var(--color-gold);
-}
-
-.heroIcon {
-  display: grid;
-  width: clamp(6rem, 13vw, 9rem);
-  aspect-ratio: 1;
-  place-items: center;
-  border-radius: .25rem;
-  background: var(--color-navy);
-  color: var(--color-gold);
-}
-
-.heroIcon svg { width: 55%; height: 55%; }
-
 .filters {
   min-width: 0;
   margin-top: 1.5rem;
@@ -226,5 +189,4 @@
 
 @media (width < 43rem) {
   .hero { grid-template-columns: 1fr; }
-  .heroIllustration { display: none; }
 }

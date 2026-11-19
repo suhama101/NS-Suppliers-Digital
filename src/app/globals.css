@@ -81,22 +81,6 @@ a:focus-visible, button:focus-visible, main:focus-visible {
   line-height: 1.15;
 }
 
-.brand-mark {
-  display: grid;
-  width: 2.625rem;
-  height: 2.625rem;
-  flex: 0 0 2.625rem;
-  place-items: center;
-  border: 1px solid var(--color-navy);
-  border-bottom: 3px solid var(--color-gold);
-  border-radius: .2rem;
-  background: var(--color-navy);
-  color: #fff;
-  font-size: 1.12rem;
-  font-weight: 800;
-  letter-spacing: -.05em;
-}
-
 .primary-links { gap: clamp(.75rem, 2.1vw, 1.9rem); }
 
 .nav-link {
@@ -199,15 +183,6 @@ a:focus-visible, button:focus-visible, main:focus-visible {
   color: #fff;
 }
 
-.hero-grid {
-  display: grid;
-  min-height: 32rem;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
-  align-items: center;
-  gap: clamp(1.25rem, 4.5vw, 4.5rem);
-  padding-block: clamp(2.75rem, 6.25vw, 5.5rem);
-}
-
 .section-label {
   display: flex;
   align-items: center;
@@ -266,89 +241,6 @@ a:focus-visible, button:focus-visible, main:focus-visible {
 
 .hero-portfolio-link:hover { color: #fff; }
 
-.hero-art {
-  position: relative;
-  isolation: isolate;
-  width: 100%;
-  aspect-ratio: 1.17;
-  overflow: hidden;
-  border: 1px solid #325879;
-  border-radius: .25rem;
-  background-color: #0c355e;
-  background-image: linear-gradient(#ffffff0d 1px, transparent 1px), linear-gradient(90deg, #ffffff0d 1px, transparent 1px);
-  background-position: center;
-  background-size: 1.5rem 1.5rem;
-}
-
-.hero-grid .hero-art {
-  aspect-ratio: 1.3;
-  border-radius: .6rem;
-  background-image: linear-gradient(#ffffff0d 1px, transparent 1px),
-    linear-gradient(90deg, #ffffff0d 1px, transparent 1px),
-    radial-gradient(ellipse at 50% 48%, #295679, #0f3152 74%);
-  background-size: 1.5rem 1.5rem, 1.5rem 1.5rem, auto;
-  box-shadow: 0 18px 28px rgb(3 21 38 / .22);
-}
-
-.art-frame { position: absolute; inset: 7%; border: 1px solid #82a6c340; }
-.art-frame::before, .art-frame::after {
-  position: absolute;
-  width: 1.4rem;
-  height: 1.4rem;
-  border: solid var(--color-gold);
-  content: "";
-}
-.art-frame::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
-.art-frame::after { right: -1px; bottom: -1px; border-width: 0 2px 2px 0; }
-
-.art-circle {
-  position: absolute;
-  inset: 12% auto auto 20%;
-  width: 60%;
-  aspect-ratio: 1;
-  border: 1px dashed #8badca80;
-  border-radius: 50%;
-  box-shadow: 0 0 0 .85rem #95b7d514;
-}
-
-.art-crates { position: absolute; inset: 13% 13% 16%; }
-.art-crate {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  padding: 0 11%;
-  border: 1px solid #91b4cf;
-  background: #133f66;
-  box-shadow: inset 0 0 0 .3rem #ffffff0d;
-}
-
-.art-crate i { height: 1px; background: #8fb4d086; }
-.art-crate-left { top: 39%; left: 4%; width: 46%; height: 37%; transform: skewY(29deg); }
-.art-crate-right { top: 39%; left: 50%; width: 46%; height: 37%; transform: skewY(-29deg); background: #1c4b72; }
-.art-crate-top {
-  top: 10.7%;
-  left: 30.8%;
-  width: 38.4%;
-  height: 57%;
-  padding-inline: 7%;
-  transform: rotate(-45deg) skew(16deg, 16deg);
-  border-color: var(--color-gold);
-  background: #285373;
-}
-.art-crate-top i { background: #f4c40094; }
-
-.art-ruler {
-  position: absolute;
-  right: 14%;
-  bottom: 10%;
-  left: 14%;
-  height: .45rem;
-  border-bottom: 1px solid #809eb8;
-  background: repeating-linear-gradient(90deg, #809eb8 0 1px, transparent 1px .7rem);
-  opacity: .5;
-}
-
 .service-hero-inner {
   display: grid;
   grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
@@ -360,28 +252,6 @@ a:focus-visible, button:focus-visible, main:focus-visible {
 .service-hero .hero-business { max-width: 37rem; }
 .service-back-link { width: fit-content; text-decoration: underline; text-underline-offset: .27em; }
 .service-back-link:hover { color: #fff; }
-
-.service-hero-art {
-  display: grid;
-  width: 100%;
-  max-width: 25rem;
-  justify-self: end;
-  place-items: center;
-  aspect-ratio: 1.75;
-}
-
-.service-emblem {
-  display: grid;
-  width: clamp(6rem, 13vw, 9rem);
-  aspect-ratio: 1;
-  place-items: center;
-  border: 1px solid #86a8c3;
-  border-radius: 50%;
-  background: #0c355e;
-  color: var(--color-gold);
-  box-shadow: 0 0 0 .8rem #91b3d11a;
-}
-.service-emblem svg { width: 62%; height: 62%; }
 
 .section-space { padding-block: clamp(3.1rem, 6vw, 5.5rem); }
 .section-split { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: clamp(1.25rem, 7vw, 7rem); }
@@ -566,7 +436,6 @@ a:focus-visible, button:focus-visible, main:focus-visible {
 .footer-link { display: flex; min-height: 2.75rem; align-items: center; padding-block: .3rem; }
 .footer-contact-link { width: fit-content; }
 .site-footer .site-brand { color: #fff; }
-.site-footer .brand-mark { border-color: #36546f; border-bottom-color: var(--color-gold); }
 .footer-brand-status { display: block; margin-top: .55rem; color: #b6cada; font-size: .875rem; }
 .footer-intro p { max-width: 18rem; margin-top: 1rem; line-height: 1.6; }
 .footer-contact { margin-bottom: .75rem; font-style: normal; }
@@ -640,16 +509,10 @@ a.contact-social-item:hover { border-color: #a77c00; background: var(--color-pap
 }
 
 @media (width < 43rem) {
-  .hero-grid, .section-split, .about-hero > .site-container, .service-hero-inner, .service-detail-grid { grid-template-columns: 1fr; }
-  .hero-grid { min-height: 0; }
-  .hero-art { width: min(100%, 29rem); aspect-ratio: 1.45; margin-top: .35rem; }
-  .hero-grid .hero-art { max-height: 10rem; }
-  .art-crates { inset-inline: 19%; }
-  .art-circle { inset: 11% auto auto 26%; width: 48%; }
+  .section-split, .about-hero > .site-container, .service-hero-inner, .service-detail-grid { grid-template-columns: 1fr; }
   .procurement-grid { grid-template-columns: 1fr; }
   .procurement-grid li { display: grid; grid-template-columns: 2.4rem minmax(0, 1fr); gap: .85rem; }
   .step-heading { flex-direction: column; justify-content: flex-start; gap: .65rem; margin: 0; }
-  .service-hero-art { display: none; }
   .section-space { padding-block: clamp(2.65rem, 8vw, 3.5rem); }
   .commitment-section { padding-bottom: 0; }
   .supply-product-grid { grid-template-columns: minmax(0, 1fr); gap: .65rem; }

@@ -1,7 +1,9 @@
 import { ClipboardList, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import { ContactLinks } from "@/components/contact-links";
+import { EditorialPhoto } from "@/components/editorial-photo";
 import { company } from "@/content/company";
+import { serviceImages } from "@/content/editorial-images";
 import { businessContact, emailHref, officeMapsHref } from "@/content/site";
 import { makePageMetadata } from "@/lib/site-metadata";
 import styles from "./contact.module.css";
@@ -35,10 +37,7 @@ export default function ContactPage() {
               <a className="site-button button-outline" href="#office-location">Office location</a>
             </div>
           </div>
-          <div className={`hero-art ${styles.heroArt}`} aria-hidden="true">
-            <div className="art-frame" />
-            <span className={styles.locationSymbol}><MapPin size={68} strokeWidth={1.25} /></span>
-          </div>
+          <EditorialPhoto image={serviceImages["procurement-project-support"]} className="page-hero-photo contact-hero-photo" priority />
         </div>
       </section>
 

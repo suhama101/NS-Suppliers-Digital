@@ -1,7 +1,9 @@
-import { Building2, CircleCheck, MapPin } from "lucide-react";
+import { Building2, CircleCheck, FileText, MapPin } from "lucide-react";
 import Link from "next/link";
+import { EditorialPhoto } from "@/components/editorial-photo";
 import { ContactCallout, ProcurementApproach } from "@/components/supply-sections";
 import { capabilities, company } from "@/content/company";
+import { serviceImages } from "@/content/editorial-images";
 import { productCategories } from "@/content/products";
 import { makePageMetadata } from "@/lib/site-metadata";
 
@@ -30,15 +32,22 @@ export default function AboutPage() {
               <dt><MapPin size={22} aria-hidden="true" />Office location</dt>
               <dd>{company.location}</dd>
             </div>
+            <div>
+              <dt><FileText size={22} aria-hidden="true" />National Tax Number (NTN)</dt>
+              <dd>{company.taxNumber}</dd>
+            </div>
           </dl>
         </div>
       </section>
 
       <section className="section-space" aria-labelledby="overview-title">
         <div className="site-container">
-          <div className="section-split">
-            <h2 id="overview-title">Company Overview</h2>
-            <p className="about-copy">{company.overview}</p>
+          <div className="section-split overview-with-photo">
+            <EditorialPhoto image={serviceImages["general-order-supply"]} className="intro-photo" />
+            <div>
+              <h2 id="overview-title">Company Overview</h2>
+              <p className="section-description">{company.overview}</p>
+            </div>
           </div>
           <h3 className="capabilities-title">Supply capabilities</h3>
           <ul className="product-grid capabilities-grid" role="list">
