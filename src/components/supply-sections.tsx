@@ -40,8 +40,10 @@ export function ProcurementApproach({ introduction }: { introduction?: string })
                   <span className="step-number" aria-hidden="true">0{index + 1}</span>
                   <Icon size={23} aria-hidden="true" />
                 </div>
-                <h3>{title}</h3>
-                <p>{description}</p>
+                <div className="step-copy">
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+                </div>
               </li>
             );
           })}

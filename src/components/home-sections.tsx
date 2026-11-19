@@ -17,8 +17,10 @@ export function HomeHero() {
             <Link href="/services" className="site-button button-gold">Explore Services</Link>
             <Link href="/contact" className="site-button button-outline">Contact Us</Link>
           </div>
-          <p className="hero-location"><MapPin size={16} aria-hidden="true" /> Based in {company.location}</p>
-          <a className="hero-portfolio-link" href="#product-portfolio">View Product Portfolio</a>
+          <div className="hero-utilities">
+            <p className="hero-location"><MapPin size={16} aria-hidden="true" /> Based in {company.location}</p>
+            <a className="hero-portfolio-link" href="#product-portfolio">View Product Portfolio</a>
+          </div>
         </div>
         <div className="hero-art" aria-hidden="true">
           <div className="art-frame" />
@@ -50,8 +52,10 @@ export function ProductHighlights() {
   return (
     <section className="section-space" id="product-portfolio" aria-labelledby="products-title">
       <div className="site-container">
-        <h2 id="products-title">Product Portfolio Highlights</h2>
-        <p className="section-description">{company.portfolioSummary}</p>
+        <div className="section-split portfolio-intro">
+          <h2 id="products-title">Product Portfolio Highlights</h2>
+          <p className="section-description">{company.portfolioSummary}</p>
+        </div>
         <ProductCards categories={productCategories} />
       </div>
     </section>

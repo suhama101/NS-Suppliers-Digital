@@ -16,9 +16,10 @@ export function SiteFooter() {
         <div className="footer-grid">
           <div className="footer-intro">
             <SiteBrand />
+            <small className="footer-brand-status">Provisional monogram</small>
             <p>{company.description}</p>
           </div>
-          <div>
+          <div className="footer-contact-group">
             <h2>Contact</h2>
             <address className="footer-contact">
               <p className="footer-detail">

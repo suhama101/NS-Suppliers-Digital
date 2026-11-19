@@ -226,5 +226,5 @@
 
 @media (width < 43rem) {
   .hero { grid-template-columns: 1fr; }
-  .heroIllustration { width: min(100%, 26rem); }
+  .heroIllustration { display: none; }
 }

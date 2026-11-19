@@ -8,7 +8,7 @@ import { getPublishedArticles } from "@/lib/blog";
 import { makePageMetadata } from "@/lib/site-metadata";
 
 const title = "Insights & Updates";
-const description = "Articles on industrial supplies, procurement and sourcing, construction equipment, and technology from M/S Noshirwan & Sons.";
+const description = "The M/S Noshirwan & Sons blog focuses on industrial supplies, procurement, construction equipment and technology.";
 
 export const metadata = makePageMetadata({ path: "/blog", title, description });
 
@@ -26,7 +26,7 @@ export default function BlogPage() {
           <div className="hero-copy">
             <p className="section-label">Blog</p>
             <h1 id="blog-title">{title}</h1>
-            <p className="hero-business">Explore articles on industrial supplies, procurement, construction equipment and technology.</p>
+            <p className="hero-business">Editorial topics include industrial supplies, procurement, construction equipment and technology.</p>
           </div>
           <div className={styles.heroIllustration} aria-hidden="true">
             <span className={styles.heroIcon}><BookOpenText size={68} strokeWidth={1.25} /></span>

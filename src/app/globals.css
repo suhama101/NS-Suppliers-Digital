@@ -12,6 +12,7 @@
 
 :root {
   --header-height: 4.5rem;
+  --surface-shadow: 0 3px 12px rgb(8 43 80 / .055);
   scroll-padding-top: calc(var(--header-height) + 1rem);
 }
 
@@ -60,6 +61,7 @@ a:focus-visible, button:focus-visible, main:focus-visible {
   top: 0;
   border-bottom: 1px solid var(--color-rule);
   background: #fff;
+  box-shadow: 0 2px 8px rgb(8 43 80 / .05);
 }
 
 .header-inner, .site-brand, .primary-links, .services-trigger {
@@ -95,7 +97,7 @@ a:focus-visible, button:focus-visible, main:focus-visible {
   letter-spacing: -.05em;
 }
 
-.primary-links { gap: clamp(.85rem, 2.5vw, 2.25rem); }
+.primary-links { gap: clamp(.75rem, 2.1vw, 1.9rem); }
 
 .nav-link {
   display: inline-flex;
@@ -115,12 +117,14 @@ a:focus-visible, button:focus-visible, main:focus-visible {
   text-underline-offset: .4rem;
 }
 
+.nav-link[aria-current], .services-trigger[data-current="true"] > .nav-link { font-weight: 750; }
+
 .menu-toggle, .services-trigger button {
   display: grid;
   min-width: 2.75rem;
   height: 2.75rem;
   place-items: center;
-  border-radius: .25rem;
+  border-radius: .4rem;
   color: var(--color-navy);
   cursor: pointer;
 }
@@ -175,15 +179,15 @@ a:focus-visible, button:focus-visible, main:focus-visible {
   justify-content: center;
   padding: .6rem 1.25rem;
   border: 1px solid transparent;
-  border-radius: .25rem;
+  border-radius: .4rem;
   font-size: .94rem;
   font-weight: 750;
   line-height: 1.25;
   text-align: center;
 }
 
-.button-gold { background: var(--color-gold); color: var(--color-navy); }
-.button-gold:hover { background: #ffda34; }
+.button-gold { border-color: #e4b500; background: var(--color-gold); color: var(--color-navy); }
+.button-gold:hover { border-color: #ffda34; background: #ffda34; box-shadow: 0 2px 7px rgb(8 43 80 / .14); }
 .nav-contact[aria-current] { box-shadow: inset 0 -3px var(--color-navy); }
 .button-outline { border-color: #6a879f; color: #fff; }
 .button-outline:hover { background: #16466f; border-color: #c3d2df; }
@@ -197,11 +201,11 @@ a:focus-visible, button:focus-visible, main:focus-visible {
 
 .hero-grid {
   display: grid;
-  min-height: 34rem;
-  grid-template-columns: 1.08fr .92fr;
+  min-height: 32rem;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
   align-items: center;
-  gap: clamp(1.5rem, 5vw, 5rem);
-  padding-block: clamp(3rem, 7vw, 6rem);
+  gap: clamp(1.25rem, 4.5vw, 4.5rem);
+  padding-block: clamp(2.75rem, 6.25vw, 5.5rem);
 }
 
 .section-label {
@@ -228,7 +232,7 @@ a:focus-visible, button:focus-visible, main:focus-visible {
   text-wrap: balance;
 }
 
-.hero-copy h1 { font-size: clamp(2.4rem, 4.45vw, 4.35rem); }
+.hero-copy h1 { font-size: clamp(2.15rem, 4.45vw, 4.35rem); }
 
 .hero-business {
   max-width: 32rem;
@@ -239,8 +243,14 @@ a:focus-visible, button:focus-visible, main:focus-visible {
 }
 
 .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.8rem; }
-.hero-location { display: flex; align-items: center; gap: .4rem; }
-.hero-location { margin-top: 1.4rem; color: #c3d5e5; font-size: .9rem; }
+.hero-utilities {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 1.25rem;
+  margin-top: 1rem;
+}
+.hero-location { display: flex; align-items: center; gap: .4rem; color: #c3d5e5; font-size: .9rem; }
 .hero-location svg { color: var(--color-gold); }
 
 .hero-portfolio-link {
@@ -268,6 +278,16 @@ a:focus-visible, button:focus-visible, main:focus-visible {
   background-image: linear-gradient(#ffffff0d 1px, transparent 1px), linear-gradient(90deg, #ffffff0d 1px, transparent 1px);
   background-position: center;
   background-size: 1.5rem 1.5rem;
+}
+
+.hero-grid .hero-art {
+  aspect-ratio: 1.3;
+  border-radius: .6rem;
+  background-image: linear-gradient(#ffffff0d 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff0d 1px, transparent 1px),
+    radial-gradient(ellipse at 50% 48%, #295679, #0f3152 74%);
+  background-size: 1.5rem 1.5rem, 1.5rem 1.5rem, auto;
+  box-shadow: 0 18px 28px rgb(3 21 38 / .22);
 }
 
 .art-frame { position: absolute; inset: 7%; border: 1px solid #82a6c340; }
@@ -334,7 +354,7 @@ a:focus-visible, button:focus-visible, main:focus-visible {
   grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
   align-items: center;
   gap: clamp(1.5rem, 6vw, 5rem);
-  padding-block: clamp(3rem, 7vw, 5rem);
+  padding-block: clamp(2.65rem, 6vw, 4.75rem);
 }
 
 .service-hero .hero-business { max-width: 37rem; }
@@ -344,8 +364,10 @@ a:focus-visible, button:focus-visible, main:focus-visible {
 .service-hero-art {
   display: grid;
   width: 100%;
+  max-width: 25rem;
+  justify-self: end;
   place-items: center;
-  aspect-ratio: 1.6;
+  aspect-ratio: 1.75;
 }
 
 .service-emblem {
@@ -361,7 +383,7 @@ a:focus-visible, button:focus-visible, main:focus-visible {
 }
 .service-emblem svg { width: 62%; height: 62%; }
 
-.section-space { padding-block: clamp(3.35rem, 7vw, 6.25rem); }
+.section-space { padding-block: clamp(3.1rem, 6vw, 5.5rem); }
 .section-split { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: clamp(1.25rem, 7vw, 7rem); }
 .section-space h2 {
   color: var(--color-navy);
@@ -373,6 +395,7 @@ a:focus-visible, button:focus-visible, main:focus-visible {
 }
 
 .about-preview h2 { max-width: 23rem; }
+.about-preview .section-split { align-items: center; }
 .about-copy { padding-left: 1.3rem; border-left: 2px solid var(--color-gold); }
 .about-copy p { max-width: 34rem; margin-bottom: 1rem; color: var(--color-muted); font-size: 1.1rem; line-height: 1.65; }
 .text-link { color: var(--color-navy); font-weight: 750; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .28em; }
@@ -393,21 +416,40 @@ a:focus-visible, button:focus-visible, main:focus-visible {
   flex-direction: column;
   padding: clamp(1.15rem, 2.5vw, 2rem);
   border: 1px solid var(--color-rule);
-  border-radius: .3rem;
+  border-radius: .5rem;
   background: #fff;
 }
 
-.service-card:hover { border-color: #a77c00; box-shadow: 0 .35rem 1rem rgb(8 43 80 / .07); }
+.service-card {
+  border-top: 2px solid #c69b00;
+  box-shadow: var(--surface-shadow);
+}
+.service-card:hover, .service-card:focus-visible { border-color: #a77c00; background: #fbfcfe; }
 .icon-tile { display: grid; width: 3rem; height: 3rem; flex: 0 0 3rem; place-items: center; border-radius: .25rem; background: #eaf0f6; color: var(--color-navy); }
 .service-card:hover .icon-tile { background: #fff5c9; }
 .service-card h3, .product-card h3, .product-card h4, .procurement-grid h3 { color: var(--color-navy); font-size: 1.15rem; font-weight: 750; line-height: 1.3; }
 .service-card h3 { margin-block: 1.4rem 1.05rem; }
 .service-card .service-pending { margin: -.65rem 0 .85rem; }
 .service-card-description { margin-bottom: 1.25rem; color: var(--color-muted); line-height: 1.6; }
-.service-card-action { margin-top: auto; color: var(--color-muted); font-size: .9rem; font-weight: 650; }
-.service-card:hover .service-card-action { text-decoration: underline; text-underline-offset: .25em; }
+.service-card-action { margin-top: auto; color: var(--color-navy); font-size: .9rem; font-weight: 700; text-decoration: underline; text-underline-offset: .25em; }
+.service-card:hover .service-card-action { text-decoration-color: #a77c00; }
 .product-card .icon-tile { margin-bottom: 1rem; }
 .product-card p { margin-top: .6rem; color: var(--color-muted); line-height: 1.6; }
+
+.portfolio-intro { align-items: center; }
+.portfolio-intro .section-description { margin-top: 0; }
+.supply-product-card {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  align-content: start;
+  gap: .9rem;
+  padding: clamp(1rem, 1.8vw, 1.5rem);
+  border-left: 2px solid #b9c9da;
+  box-shadow: var(--surface-shadow);
+}
+.supply-product-card .icon-tile { width: 2.5rem; height: 2.5rem; margin: 0; }
+.supply-product-card .icon-tile svg { width: 1.25rem; height: 1.25rem; }
+.supply-product-card p { margin-top: .4rem; }
 
 .section-description, p.about-copy {
   max-width: 43rem;
@@ -420,7 +462,7 @@ a:focus-visible, button:focus-visible, main:focus-visible {
 .about-hero > .site-container {
   grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
   align-items: center;
-  padding-block: clamp(3rem, 7vw, 6rem);
+  padding-block: clamp(2.75rem, 6vw, 5rem);
 }
 
 .about-facts {
@@ -444,7 +486,7 @@ a:focus-visible, button:focus-visible, main:focus-visible {
 }
 .capabilities-grid { margin-top: 1rem; }
 .capabilities-grid .product-card { border-top: 2px solid var(--color-gold); }
-.about-portfolio { border-top: 1px solid var(--color-rule); }
+.about-portfolio { border-top: 1px solid var(--color-rule); background: #fbfcfd; }
 .commitment-section { padding-bottom: 0; }
 .commitment-panel {
   display: flex;
@@ -453,15 +495,48 @@ a:focus-visible, button:focus-visible, main:focus-visible {
   gap: 1rem 1.4rem;
   padding: clamp(1.5rem, 5vw, 3rem);
   border-left: 3px solid var(--color-gold);
+  border-radius: .5rem;
   background: var(--color-paper);
 }
 .commitment-panel > div { flex: 1 1 18rem; }
 
-.procurement-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 3vw, 2.5rem); }
-.procurement-grid li { padding: 1.2rem 0 .4rem; border-top: 2px solid var(--color-navy); }
-.step-heading { display: flex; justify-content: space-between; align-items: center; margin-bottom: .9rem; color: var(--color-navy); }
-.step-number { box-shadow: inset 0 -.35em #f4c40076; font-size: 1.45rem; font-weight: 750; line-height: 1.05; }
+.procurement-grid {
+  --step-gap: clamp(.85rem, 2.25vw, 1.75rem);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--step-gap);
+}
+.procurement-grid li {
+  position: relative;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  border: 1px solid var(--color-rule);
+  border-radius: .5rem;
+  background: #fff;
+}
+.step-heading { display: flex; justify-content: space-between; align-items: center; margin-bottom: .85rem; color: var(--color-navy); }
+.step-number {
+  display: grid;
+  width: 2.4rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff2b3;
+  color: var(--color-navy);
+  font-size: .95rem;
+  font-weight: 800;
+  line-height: 1;
+}
 .procurement-grid p { margin-top: .6rem; color: var(--color-muted); line-height: 1.6; }
+
+@media (width >= 43rem) {
+  .procurement-grid li:not(:last-child)::after {
+    position: absolute;
+    top: calc(clamp(1rem, 2vw, 1.5rem) + 1.2rem);
+    left: 100%;
+    width: var(--step-gap);
+    border-top: 1px solid #9baec0;
+    content: "";
+  }
+}
 
 .contact-callout {
   display: flex;
@@ -471,8 +546,8 @@ a:focus-visible, button:focus-visible, main:focus-visible {
   gap: 1.4rem 3rem;
   padding: clamp(1.5rem, 5vw, 3.5rem);
   border-left: 4px solid var(--color-gold);
-  border-radius: .3rem;
-  background: var(--color-navy);
+  border-radius: .55rem;
+  background: radial-gradient(ellipse at right center, #16466f, transparent 70%), var(--color-navy);
 }
 .contact-callout h2 { color: #fff; max-width: 32rem; }
 
@@ -485,12 +560,14 @@ a:focus-visible, button:focus-visible, main:focus-visible {
 
 .site-footer { padding-top: clamp(2.75rem, 6vw, 4.5rem); background: #071f39; color: #c5d5e4; }
 .footer-grid { display: grid; grid-template-columns: 1.15fr 1.1fr .7fr 1.05fr; gap: clamp(1rem, 3vw, 2rem); }
-.footer-grid h2 { margin-bottom: .8rem; color: #fff; font-size: .94rem; font-weight: 750; }
+.footer-grid h2 { margin-bottom: .55rem; color: #fff; font-size: .94rem; font-weight: 750; }
+.footer-grid nav { padding-top: .55rem; border-top: 1px solid #36546f; }
 .footer-grid a:not(.site-brand):not(.footer-icon):hover { color: #fff; text-decoration: underline; text-underline-offset: .25em; }
 .footer-link { display: flex; min-height: 2.75rem; align-items: center; padding-block: .3rem; }
 .footer-contact-link { width: fit-content; }
 .site-footer .site-brand { color: #fff; }
 .site-footer .brand-mark { border-color: #36546f; border-bottom-color: var(--color-gold); }
+.footer-brand-status { display: block; margin-top: .55rem; color: #b6cada; font-size: .875rem; }
 .footer-intro p { max-width: 18rem; margin-top: 1rem; line-height: 1.6; }
 .footer-contact { margin-bottom: .75rem; font-style: normal; }
 .footer-detail { display: flex; align-items: flex-start; gap: .55rem; }
@@ -566,18 +643,18 @@ a.contact-social-item:hover { border-color: #a77c00; background: var(--color-pap
   .hero-grid, .section-split, .about-hero > .site-container, .service-hero-inner, .service-detail-grid { grid-template-columns: 1fr; }
   .hero-grid { min-height: 0; }
   .hero-art { width: min(100%, 29rem); aspect-ratio: 1.45; margin-top: .35rem; }
-  .hero-grid .hero-art { max-height: 12rem; }
+  .hero-grid .hero-art { max-height: 10rem; }
   .art-crates { inset-inline: 19%; }
   .art-circle { inset: 11% auto auto 26%; width: 48%; }
   .procurement-grid { grid-template-columns: 1fr; }
-  .service-hero-art { width: min(100%, 29rem); max-height: 13.5rem; aspect-ratio: 1.9; }
+  .procurement-grid li { display: grid; grid-template-columns: 2.4rem minmax(0, 1fr); gap: .85rem; }
+  .step-heading { flex-direction: column; justify-content: flex-start; gap: .65rem; margin: 0; }
+  .service-hero-art { display: none; }
   .section-space { padding-block: clamp(2.65rem, 8vw, 3.5rem); }
   .commitment-section { padding-bottom: 0; }
   .supply-product-grid { grid-template-columns: minmax(0, 1fr); gap: .65rem; }
   .supply-product-card {
-    display: grid;
     grid-template-columns: 2.25rem minmax(0, 1fr);
-    align-items: start;
     gap: .75rem;
     padding: .9rem;
   }
@@ -588,4 +665,19 @@ a.contact-social-item:hover { border-color: #a77c00; background: var(--color-pap
 
 @media (width < 25rem) {
   .service-grid, .product-grid, .footer-grid { grid-template-columns: 1fr; }
+  .services-section .service-card {
+    display: grid;
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    align-content: start;
+    align-items: start;
+    gap: .3rem .8rem;
+    padding: 1rem;
+  }
+  .services-section .service-card .icon-tile { grid-row: span 2; width: 2.5rem; height: 2.5rem; }
+  .services-section .service-card > :not(.icon-tile) { grid-column: 2; margin: 0; }
+}
+
+@media (22rem <= width < 30rem) {
+  .footer-grid { grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr); }
+  .footer-intro, .footer-contact-group { grid-column: 1 / -1; }
 }

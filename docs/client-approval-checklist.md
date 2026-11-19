@@ -1,0 +1,27 @@
+# Client approval checklist
+
+Use this checklist to record the client’s launch decisions for M/S Noshirwan & Sons. Record the approver, decision date and approved asset or URL with each item.
+
+## Required before public launch
+
+- [ ] **Business contact.** Confirm the office address shown in the PDF and both business phone numbers. Test that the numbers reach the intended business contact. Approve the published address or agree how it should be presented while verification is pending.
+- [ ] **Maps and email.** Verify the exact office pin before enabling Maps. Confirm the official email spelling and test receipt before enabling email. The PDF prints `noshirwan900@gamil.com`. The client can approve a phone-only launch while these channels are pending.
+- [ ] **IT Services.** Approve what may be published, or explicitly approve keeping the current pending-scope notice at launch. Supply the approved service names and descriptions, who the services are for, what information an enquiry should include, and the preferred contact or engagement process.
+- [ ] **Launch origin and indexing.** Approve the Vercel URL or provide the final custom domain. Make a separate decision about search indexing. Set `SITE_URL` at build time for an approved custom domain and set `SITE_INDEXABLE=true` only for an approved indexable production build. Verify the live canonical tags, robots metadata, response headers and sitemap before announcing launch. Review builds default to `noindex, follow`.
+- [ ] **Branding sign-off.** Approve the official logo for website use or explicitly approve launching with the provisional NS monogram, favicon and sharing card.
+
+## Recommended improvements
+
+- [ ] **Logo package.** Supply the approved logo as an SVG, a high-resolution PNG and light/dark variants where available. Confirm whether the mark on the profile cover is the approved artwork. Supply or approve the favicon and 1200 × 630 sharing artwork.
+- [ ] **Product and industrial imagery.** Supply rights-cleared images and identify what each depicts. Confirm whether any images from the PDF may be reused and whether any show company premises or operations. The current site uses illustrative graphics and icons.
+
+## Optional future additions
+
+- [ ] **Social profiles.** Once the official accounts exist, verify the full HTTPS profile URLs and set `linkedin`, `medium` and `youtube` individually in [`src/content/site.ts`](../src/content/site.ts) under `socialLinks`. Leave each unverified entry as `null`. Rebuild and check that each link opens the intended profile from Contact and the footer.
+- [ ] **Blog.** Add client-approved articles through `src/content/blog.ts` when copy, publication dates, bylines and any image permissions are confirmed.
+
+## Updating approved content
+
+Contact data lives in [`src/content/site.ts`](../src/content/site.ts). Set `officeAddressConfirmed` only after confirming the address and opening the exact Google Maps result produced by the site’s address search. If the search produces the wrong pin, use the client’s verified location link before activation. Update `email.address` with the confirmed address and set `email.confirmed` only after verification.
+
+Add approved service scope and engagement details to [`src/content/it-services.ts`](../src/content/it-services.ts). Update the IT summary in [`src/content/services.ts`](../src/content/services.ts) and clear `pendingApproval` once the client has approved the published scope.

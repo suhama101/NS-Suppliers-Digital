@@ -3,7 +3,7 @@
   grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
   align-items: center;
   gap: clamp(1.5rem, 6vw, 5rem);
-  padding-block: clamp(3rem, 7vw, 5rem);
+  padding-block: clamp(2.65rem, 6vw, 4.75rem);
 }
 
 .heroArt {
@@ -42,8 +42,9 @@
   min-width: 0;
   padding: clamp(1.15rem, 3vw, 2rem);
   border: 1px solid var(--color-rule);
-  border-radius: .3rem;
+  border-radius: .5rem;
   background: #fff;
+  box-shadow: var(--surface-shadow);
 }
 
 .card h3 {
@@ -58,8 +59,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  border-top: 3px solid var(--color-gold);
-  background: var(--color-paper);
+  border-left: 3px solid var(--color-gold);
+  background: #f1f5f9;
 }
 
 .officeCard :global(.site-button) { margin-top: auto; }
@@ -91,6 +92,15 @@
   overflow-wrap: anywhere;
 }
 
+.phoneCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.phoneCard .contactAction { margin-top: auto; }
+.phoneCard :global(.icon-tile) { flex: none; }
+
 .emailCard {
   display: flex;
   grid-column: 1 / -1;
@@ -110,6 +120,8 @@
   margin-top: 1.5rem;
 }
 
+.inquiryActions :global(.text-link) { display: inline-flex; min-height: 2.75rem; align-items: center; }
+
 .inquiryCard ul {
   margin-top: .75rem;
   padding-inline-start: 1.25rem;
@@ -122,7 +134,7 @@
 
 @media (width < 48rem) {
   .hero, .contactGrid { grid-template-columns: minmax(0, 1fr); }
-  .heroArt { width: min(100%, 26rem); max-height: 12rem; }
+  .heroArt { display: none; }
 }
 
 @media (width < 23rem) {

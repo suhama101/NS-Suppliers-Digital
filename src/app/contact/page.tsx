@@ -62,7 +62,7 @@ export default function ContactPage() {
 
             <div className={styles.channelGrid}>
               {phones.map(({ number, href }, index) => (
-                <section className={styles.card} key={href} aria-labelledby={`phone-title-${index}`}>
+                <section className={`${styles.card} ${styles.phoneCard}`} key={href} aria-labelledby={`phone-title-${index}`}>
                   <span className="icon-tile"><Phone size={22} aria-hidden="true" /></span>
                   <h3 id={`phone-title-${index}`}>{index === 0 ? "Phone" : "Alternate phone"}</h3>
                   <a className={`text-link ${styles.contactAction}`} href={href}>{number}</a>

@@ -73,16 +73,20 @@ Maintain service summaries in `src/content/services.ts`. When the client approve
 2. Import the repository into Vercel and use the repository root and the Next.js framework preset.
 3. Use Node.js 24.x and the preset’s default build and output settings. The build runs `npm run build` and generates the static export in `out/`.
 
-The site can build locally without environment variables or runtime services. When the public domain is approved, set the build-time `SITE_URL` to its HTTPS origin, with no path or query. Canonical and Open Graph URLs are generated from that origin. Review the public sitemap, indexing settings and approved social preview imagery before launch.
+The site can build locally without environment variables or runtime services.
 
 [Vercel Git deployment guide](https://vercel.com/docs/git) · [Next.js static export guide](https://nextjs.org/docs/app/guides/static-exports)
 
-### Private client previews
+## Search and sharing configuration
 
-Before sharing a hosted preview with the client, complete all three checks.
+The default canonical origin is `https://ns-suppliers-digital.vercel.app`. The build-time `SITE_URL` overrides it for canonical URLs, Open Graph URLs, social image URLs and the sitemap. Use the approved HTTPS origin without credentials, a path, a query or a fragment.
 
-1. Enable Vercel Authentication for Preview deployments and grant access to the intended reviewers.
-2. Open the preview URL in a signed-out browser and verify that it requires authentication. Confirm that an authorized reviewer can load the site.
-3. Inspect the authenticated preview response and verify that the `X-Robots-Tag` header includes `noindex`.
+The public review build defaults to `noindex, follow`. Its `robots.txt` allows crawling so search engines can read the HTML directive. `/sitemap.xml` is generated for every build and lists the published pages and approved articles. The review `robots.txt` omits the sitemap announcement.
 
-[Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) · [Vercel response headers](https://vercel.com/docs/headers/response-headers)
+After the client approves indexing:
+
+1. Set `SITE_INDEXABLE=true` for the production build. Keep it unset for review or preview builds. Set `SITE_URL` if the client has approved a new canonical domain.
+2. Build and deploy the approved release. Verify the public HTML has `index, follow`, check for any conflicting `X-Robots-Tag` headers, and confirm that canonical tags and the `robots.txt` sitemap URL use the intended origin.
+3. Verify the live `/sitemap.xml` and submit it through the client's search console if configured.
+
+The NS favicon at `src/app/favicon.ico` and sharing card at `public/images/ns-social-card.png` are provisional. Replace them with approved artwork when available. If the card filename, dimensions or visible content change, update its metadata in `src/lib/site-metadata.ts`.
