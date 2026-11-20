@@ -8,9 +8,8 @@
 .inner-page-hero-media {
   position: absolute;
   z-index: -1;
-  inset: 0 0 0 36%;
+  inset: 0;
   overflow: hidden;
-  mask-image: linear-gradient(90deg, transparent, black 27%);
 }
 
 .inner-page-hero-media > picture { position: absolute; inset: 0; background: #19364e; }
@@ -19,7 +18,7 @@
 .inner-page-hero-media::before {
   position: absolute;
   z-index: 1;
-  inset: 1.35rem 1.35rem 1.35rem 30%;
+  inset: calc(var(--header-height) + 1.35rem) 1.35rem 1.35rem 56%;
   border-top: 1px solid #f7fafc55;
   border-right: 1px solid #f7fafc55;
   pointer-events: none;
@@ -30,17 +29,18 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(0deg, #071d36b3, transparent 70%),
-    linear-gradient(90deg, #0b2540 0%, #0b2540d9 21%, #081e3550 54%, #081e351a);
+    linear-gradient(90deg, #081e35 0%, #081e35eb 28%, #081e35bf 53%, #081e3540 80%, #081e3526),
+    linear-gradient(0deg, #071d36b3, transparent 72%);
   content: "";
 }
 
 .inner-page-hero-inner {
   position: relative;
   display: grid;
-  min-height: clamp(20rem, 31vw, 26rem);
+  min-height: calc(var(--header-height) + clamp(20rem, 31vw, 26rem));
   align-items: center;
   padding-block: clamp(3rem, 5vw, 4.5rem);
+  padding-top: calc(var(--header-height) + clamp(3rem, 5vw, 4.5rem));
 }
 
 .inner-page-hero .hero-copy { width: 61%; }
@@ -172,10 +172,9 @@ a.footer-icon:hover { border-color: var(--color-gold); color: var(--color-gold);
 }
 
 @media (width < 43rem) {
-  .inner-page-hero-media { inset: 0; mask-image: none; }
-  .inner-page-hero-media::before { inset: .75rem .75rem .75rem 64%; }
+  .inner-page-hero-media::before { inset: calc(var(--header-height) + .75rem) .75rem .75rem 64%; }
   .inner-page-hero-media::after { background: linear-gradient(180deg, #091f37f5 0%, #091f37ed 43%, #091f377a 75%, #091f3726); }
-  .inner-page-hero-inner { min-height: 0; padding-block: 2.5rem clamp(5rem, 23vw, 8rem); }
+  .inner-page-hero-inner { min-height: 0; padding-block: calc(var(--header-height) + 2.5rem) clamp(5rem, 23vw, 8rem); }
   .inner-page-hero .hero-copy { width: 100%; }
   .inner-page-hero h1 { font-size: clamp(2.35rem, 8.4vw, 3.65rem); }
   .inner-page-hero .hero-business { margin-top: .8rem; font-size: 1.04rem; }

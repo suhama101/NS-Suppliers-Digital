@@ -2,7 +2,10 @@
   /* Leave extra room when the caption and controls wrap on shorter screens. */
   --showcase-reserve: clamp(10rem, calc(32.75rem - 50svh), 14rem);
   --frame-height: max(9rem, calc(100svh - var(--header-height) - var(--showcase-reserve)));
-  background: radial-gradient(ellipse at 84% 8%, #20496d, transparent 60%), #081e34;
+  background:
+    radial-gradient(ellipse at 72% 24%, rgb(82 116 139 / .16), transparent 64%),
+    linear-gradient(180deg, rgb(5 22 38 / .88), rgb(8 30 50 / .77) 46%, rgb(5 22 38 / .94)),
+    url("/images/industrial/workshop.webp") center 46% / cover no-repeat #081e34;
   color: #fff;
 }
 
@@ -17,6 +20,15 @@
   font-size: clamp(1.65rem, 3.4vw, 2.75rem);
 }
 
+.section .inner h2::after {
+  display: block;
+  width: 2.25rem;
+  height: 2px;
+  margin-top: .4rem;
+  background: var(--color-gold);
+  content: "";
+}
+
 .slider { margin-top: clamp(.85rem, 2.2vh, 1.35rem); }
 
 .frame {
@@ -25,9 +37,9 @@
   aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: .75rem;
-  outline: 1px solid #728ca5;
+  outline: 1px solid #8d9dad;
   background: #0a233d;
-  box-shadow: 0 20px 44px rgb(1 14 28 / .35);
+  box-shadow: 0 1rem 2.75rem rgb(1 10 21 / .55);
 }
 
 .frame::after {
@@ -66,6 +78,7 @@
   justify-content: center;
   border: 1px solid #738ca3;
   border-radius: .35rem;
+  background: rgb(5 24 42 / .54);
   color: #fff;
   cursor: pointer;
 }
@@ -81,7 +94,7 @@
   font-size: .875rem;
   font-weight: 700;
 }
-.indicators button { border-color: transparent; }
+.indicators button { border-color: transparent; background: transparent; }
 .indicators span { width: .54rem; height: .54rem; border: 1px solid #d6e3ed; border-radius: 50%; }
 .indicators [aria-current="true"] span { border-color: #ffdc66; background: #ffdc66; }
 .section:not([data-enhanced]) .interactive { visibility: hidden; }
