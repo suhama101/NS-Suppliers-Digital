@@ -1,0 +1,86 @@
+.section {
+  background: radial-gradient(ellipse at 85% 10%, #1d466b, transparent 62%), #0a233d;
+  color: #fff;
+}
+
+.section h2 { color: #fff; }
+.context { margin-top: .65rem; color: #c9dbea; }
+.slider { max-width: 62rem; margin: clamp(1.5rem, 3.6vw, 2.85rem) auto 0; }
+
+.frame {
+  position: relative;
+  isolation: isolate;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid #67839d;
+  border-radius: .68rem;
+  background: #061729;
+  box-shadow: 0 16px 35px rgb(1 14 28 / .28);
+}
+
+.poster, .video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: clamp(3.3rem, 7vw, 5rem);
+  aspect-ratio: 1;
+  place-items: center;
+  transform: translate(-50%, -50%);
+  border: 1px solid #ffdc66;
+  border-radius: 50%;
+  background: #f4c400;
+  color: #0a233d;
+  box-shadow: 0 0 0 .45rem rgb(10 35 61 / .6);
+  cursor: pointer;
+}
+.play svg { margin-left: .15rem; }
+.play:hover { background: #ffdc66; }
+.video:focus-visible, .play:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+.video:focus-visible { outline-offset: -4px; }
+.error {
+  position: absolute;
+  inset: auto .5rem .5rem;
+  padding: .45rem .65rem;
+  border-radius: .35rem;
+  background: #0a233df5;
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem 1rem;
+  padding-top: 1.1rem;
+}
+.details h3 { font-size: clamp(1.15rem, 2.6vw, 1.6rem); font-weight: 750; line-height: 1.2; }
+.details p { margin-top: .35rem; color: #d6e3ed; }
+.controls, .indicators { display: flex; align-items: center; }
+.controls { gap: .25rem; }
+.controls button {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: 0 0 2.75rem;
+  place-items: center;
+  border: 1px solid #899fb5;
+  border-radius: .35rem;
+  color: #fff;
+  cursor: pointer;
+}
+.controls button:hover { border-color: #ffdc66; color: #ffdc66; }
+.controls button:focus-visible { outline: 2px solid #ffdc66; outline-offset: 2px; }
+.indicators button { border-color: transparent; }
+.indicators span { width: .6rem; height: .6rem; border: 1px solid #d6e3ed; border-radius: 50%; }
+.indicators [aria-current="true"] span { border-color: #ffdc66; background: #ffdc66; }
+.section:not([data-enhanced]) .interactive { visibility: hidden; }
+
+@media (width < 43rem) {
+  .details { display: grid; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .play, .controls button { transition: background-color .18s ease-out, border-color .18s ease-out, color .18s ease-out; }
+}

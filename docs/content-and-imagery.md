@@ -35,6 +35,18 @@ The profile provides no concrete IT offerings. The IT Services page continues to
 | `packaging.webp`, `lubricants.webp`, `fasteners.webp`, `electrical-plumbing.webp` | Packaging, lubricants, fasteners and electrical/plumbing supplies |
 | `safety.webp`, `raw-materials.webp`, `spares.webp`, `tyres.webp` | PPE, steel stock, mechanical spares and heavy-vehicle tyres |
 
+## Industrial Supply Portfolio video register
+
+These three Mixkit clips illustrate industrial equipment and logistics. The website identifies the clips as stock footage. Each item page confirms commercial use under the [Mixkit Stock Video Free License](https://mixkit.co/license/modal/videoFree/), which permits modifications and does not require attribution. The source credits are recorded here.
+
+| Local clip | Source | Export length | MP4 bytes | Poster bytes |
+| --- | --- | ---: | ---: | ---: |
+| `public/videos/industrial/workshop.mp4` | [Worker operating an industrial lathe](https://mixkit.co/free-stock-video/worker-operating-an-industrial-lathe-2244/) | 9 s | 841,806 | 30,006 |
+| `public/videos/industrial/construction.mp4` | [Excavation crane lifts a rock into a truck](https://mixkit.co/free-stock-video/excavation-crane-lifts-a-rock-into-a-truck-4069/) | 9 s | 631,328 | 85,108 |
+| `public/videos/industrial/handling.mp4` | [Cranes working on unloading dock](https://mixkit.co/free-stock-video/cranes-working-on-unloading-dock-4012/) | 10 s | 1,069,136 | 35,560 |
+
+The exported clips are silent, 960 × 540 H.264 MP4s at 25 fps with the metadata moved to the front for progressive playback. The construction clip was reframed to exclude readable equipment branding. The corresponding WebP stills are in `public/images/video-posters/`. The carousel requests an MP4 only upon playback.
+
 ## Image generation prompts
 
 **Warehouse hero**

@@ -264,14 +264,13 @@ a:focus-visible, button:focus-visible, main:focus-visible {
 .about-copy > .text-link { display: inline-flex; min-height: 2.75rem; align-items: center; }
 
 .services-section, .procurement-section { background: var(--color-paper); }
-.service-grid, .product-grid, .procurement-grid, .service-detail-grid { display: grid; gap: 1rem; margin-top: 2rem; }
-.service-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.product-grid, .procurement-grid, .service-detail-grid { display: grid; gap: 1rem; margin-top: 2rem; }
 .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .service-detail-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .service-specifications { border-top: 1px solid var(--color-rule); }
 .it-service-list { margin-top: .6rem; padding-left: 1.25rem; color: var(--color-muted); list-style: disc; }
 
-.service-card, .product-card {
+.product-card {
   display: flex;
   height: 100%;
   flex-direction: column;
@@ -281,19 +280,8 @@ a:focus-visible, button:focus-visible, main:focus-visible {
   background: #fff;
 }
 
-.service-card {
-  border-top: 2px solid #c69b00;
-  box-shadow: var(--surface-shadow);
-}
-.service-card:hover, .service-card:focus-visible { border-color: #a77c00; background: #fbfcfe; }
 .icon-tile { display: grid; width: 3rem; height: 3rem; flex: 0 0 3rem; place-items: center; border-radius: .25rem; background: #eaf0f6; color: var(--color-navy); }
-.service-card:hover .icon-tile { background: #fff5c9; }
-.service-card h3, .product-card h3, .product-card h4, .procurement-grid h3 { color: var(--color-navy); font-size: 1.15rem; font-weight: 750; line-height: 1.3; }
-.service-card h3 { margin-block: 1.4rem 1.05rem; }
-.service-card .service-pending { margin: -.65rem 0 .85rem; }
-.service-card-description { margin-bottom: 1.25rem; color: var(--color-muted); line-height: 1.6; }
-.service-card-action { margin-top: auto; color: var(--color-navy); font-size: .9rem; font-weight: 700; text-decoration: underline; text-underline-offset: .25em; }
-.service-card:hover .service-card-action { text-decoration-color: #a77c00; }
+.product-card h3, .product-card h4, .procurement-grid h3 { color: var(--color-navy); font-size: 1.15rem; font-weight: 750; line-height: 1.3; }
 .product-card .icon-tile { margin-bottom: 1rem; }
 .product-card p { margin-top: .6rem; color: var(--color-muted); line-height: 1.6; }
 
@@ -454,7 +442,7 @@ a.contact-social-item:hover { border-color: #a77c00; background: var(--color-pap
   .services-trigger button { min-width: 2.75rem; }
   .services-dropdown { position: static; min-width: 0; margin-bottom: .6rem; background: var(--color-paper); box-shadow: none; }
   .nav-contact { margin-top: .7rem; }
-  .service-grid, .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (width < 43rem) {
@@ -476,15 +464,5 @@ a.contact-social-item:hover { border-color: #a77c00; background: var(--color-pap
 }
 
 @media (width < 25rem) {
-  .service-grid, .product-grid { grid-template-columns: 1fr; }
-  .services-section .service-card {
-    display: grid;
-    grid-template-columns: 2.5rem minmax(0, 1fr);
-    align-content: start;
-    align-items: start;
-    gap: .3rem .8rem;
-    padding: 1rem;
-  }
-  .services-section .service-card .icon-tile { grid-row: span 2; width: 2.5rem; height: 2.5rem; }
-  .services-section .service-card > :not(.icon-tile) { grid-column: 2; margin: 0; }
+  .product-grid { grid-template-columns: 1fr; }
 }

@@ -16,7 +16,7 @@ export default function ServicesPage() {
         <div className="site-container">
           <h2 id="services-overview-title">Our Services</h2>
           <p className="section-description">{company.overview}</p>
-          <ServiceCards showDescriptions />
+          <ServiceCards />
         </div>
       </section>
       <ProcurementApproach />

@@ -28,21 +28,23 @@ export function ServiceHero({ title, description, image, showBackLink = false }:
   );
 }
 
-export function ServiceCards({ showDescriptions = false }: { showDescriptions?: boolean }) {
+export function ServiceCards() {
   return (
     <ul className="service-grid" role="list">
-      {services.map(({ slug, title, description, pendingApproval }) => (
-          <li key={slug}>
-            <Link href={serviceHref(slug)} className="service-card editorial-service-card">
-              <EditorialPhoto image={serviceImages[slug]} className="service-card-photo" />
-              <div className="editorial-service-copy">
-                <h3>{title}</h3>
-                {pendingApproval && !showDescriptions && <p className="service-pending">Scope pending approval</p>}
-                {showDescriptions && <p className="service-card-description">{description}</p>}
-                <span className="service-card-action" aria-hidden="true">View service <ArrowUpRight size={16} /></span>
-              </div>
-            </Link>
-          </li>
+      {services.map(({ slug, title, description }) => (
+        <li key={slug}>
+          <article className="service-card">
+            <EditorialPhoto image={serviceImages[slug]} className="service-card-photo" />
+            <div className="editorial-service-copy">
+              <h3>{title}</h3>
+              <p>{description}</p>
+              <Link href={serviceHref(slug)} className="site-button button-gold service-card-action">
+                See More<span className="sr-only"> about {title}</span>
+                <ArrowUpRight size={17} aria-hidden="true" />
+              </Link>
+            </div>
+          </article>
+        </li>
       ))}
     </ul>
   );

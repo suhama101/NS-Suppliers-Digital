@@ -1,5 +1,6 @@
 import { CompanyIntro } from "@/components/company-intro";
 import { CoreServices, HomeHero, ProductHighlights } from "@/components/home-sections";
+import { IndustrialVideoSlider } from "@/components/industrial-video-slider";
 import { ContactCallout, ProcurementApproach, TyreSupply } from "@/components/supply-sections";
 import { company } from "@/content/company";
 import { homeTitle, makePageMetadata } from "@/lib/site-metadata";
@@ -12,6 +13,7 @@ export default function HomePage() {
       <HomeHero />
       <CompanyIntro />
       <CoreServices />
+      <IndustrialVideoSlider />
       <ProductHighlights />
       <ProcurementApproach />
       <TyreSupply preview />
