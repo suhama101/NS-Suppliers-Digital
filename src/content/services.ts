@@ -13,7 +13,7 @@ export const services = [
   },
   {
     slug: "procurement-project-support",
-    title: "Procurement & Project Support",
+    title: "Procurement & Installation",
     description: "Support for specification review, itemised quotations, sourcing and dispatch under agreed procurement terms.",
     pendingApproval: false,
   },

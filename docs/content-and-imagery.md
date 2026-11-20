@@ -15,7 +15,7 @@ The source is the supplied 12-page `Noshirwan_Sons_Company_Profile_Corrected.pdf
 | 7 | Lubricants, oils, greases, maintenance fluids, adhesives, fasteners, cutting and cleaning supplies | Industrial & Construction Supplies. General Order Supply also includes the hardware and fasteners range. |
 | 8 | Electrical, plumbing, sanitary and personal protective equipment | Industrial & Construction Supplies and General Order Supply. |
 | 9 | Indicative raw-material and spare-part families and RFQ requirements | Industrial & Construction Supplies. Examples remain subject to RFQ, including purchaser specifications and the relevant compatibility checks. |
-| 10 | Heavy-vehicle tyres and three procurement steps | Home links to the three source-named options on General Order Supply, each in size 1000/20 and subject to quotation, client acceptance and availability. Home, About, Services, General Order Supply and Procurement & Project Support explain the procurement steps. |
+| 10 | Heavy-vehicle tyres and three procurement steps | Home links to the three source-named options on General Order Supply, each in size 1000/20 and subject to quotation, client acceptance and availability. Home, About, Services, General Order Supply and Procurement & Installation explain the procurement steps. |
 | 11 | Registered business information, NTN, office address, phones, email and commitment | About shows NTN 7927069-4 and the company commitment. Contact and the footer follow the letterhead transcription with the Step 22 client-confirmed email correction. Maps awaits verification of the exact pin. |
 | 12 | Corporate signatory block | Retained in the source PDF. Website content omits the signature block and makes no signatory claim. |
 
