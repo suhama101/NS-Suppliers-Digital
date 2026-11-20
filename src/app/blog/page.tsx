@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { EditorialPhoto } from "@/components/editorial-photo";
+import { InnerPageHero } from "@/components/inner-page-hero";
 import { ArticleCard } from "@/components/blog/article-card";
 import { ArticleEmptyState } from "@/components/blog/article-empty-state";
 import { ArticleListing } from "@/components/blog/article-listing";
@@ -22,16 +22,13 @@ export default function BlogPage() {
 
   return (
     <>
-      <section className="home-hero" aria-labelledby="blog-title">
-        <div className={`site-container ${styles.hero}`}>
-          <div className="hero-copy">
-            <p className="section-label">Blog</p>
-            <h1 id="blog-title">{title}</h1>
-            <p className="hero-business">Editorial topics include industrial supplies, procurement, construction equipment and technology.</p>
-          </div>
-          <EditorialPhoto image={serviceImages["procurement-project-support"]} className="page-hero-photo" priority />
-        </div>
-      </section>
+      <InnerPageHero
+        id="blog-title"
+        title={title}
+        description="Editorial topics include industrial supplies, procurement, construction equipment and technology."
+        image={serviceImages["procurement-project-support"]}
+        label={<p className="section-label">Blog</p>}
+      />
 
       <section className={`section-space ${cards.length ? "" : styles.emptyListing}`} aria-labelledby="blog-articles-title">
         <div className="site-container">

@@ -1,10 +1,10 @@
-import { MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import { ContactLinks } from "@/components/contact-links";
 import { SiteBrand } from "@/components/site-brand";
 import { company } from "@/content/company";
 import { serviceHref, services } from "@/content/services";
-import { businessContact, navigation } from "@/content/site";
+import { businessContact, emailHref, navigation } from "@/content/site";
 
 export function SiteFooter() {
   const { officeAddress, officeAddressConfirmed, phones } = businessContact;
@@ -13,34 +13,16 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="site-container">
-        <div className="footer-grid">
+        <div className="footer-lead">
           <div className="footer-intro">
             <SiteBrand />
             <p>{company.description}</p>
-            <small className="footer-brand-status">Industrial imagery is illustrative.</small>
           </div>
-          <div className="footer-contact-group">
-            <h2>Contact</h2>
-            <address className="footer-contact">
-              <p className="footer-detail">
-                <MapPin size={17} aria-hidden="true" />
-                <span>
-                  {officeAddress.join(" ")}
-                  {!officeAddressConfirmed && <small className="footer-address-status">Address pending verification</small>}
-                </span>
-              </p>
-              <ul role="list">
-                {phones.map(({ number, href }) => (
-                  <li className="footer-detail" key={href}>
-                    <Phone size={16} aria-hidden="true" />
-                    <a className="footer-link" href={href}>{number}</a>
-                  </li>
-                ))}
-              </ul>
-            </address>
-            <Link className="footer-link footer-contact-link" href="/contact">Contact Us</Link>
-            <ContactLinks variant="footer" />
-          </div>
+          <Link className="site-button footer-contact-link" href="/contact">
+            Contact Us <ArrowUpRight size={17} aria-hidden="true" />
+          </Link>
+        </div>
+        <div className="footer-grid">
           <nav aria-labelledby="footer-navigation">
             <h2 id="footer-navigation">Quick links</h2>
             <ul>
@@ -57,8 +39,38 @@ export function SiteFooter() {
               ))}
             </ul>
           </nav>
+          <section className="footer-contact-group" aria-labelledby="footer-contact-title">
+            <h2 id="footer-contact-title">Contact</h2>
+            <address className="footer-contact">
+              <p className="footer-detail">
+                <MapPin size={17} aria-hidden="true" />
+                <span>
+                  {officeAddress.join(" ")}
+                  {!officeAddressConfirmed && <small className="footer-address-status">Address pending verification</small>}
+                </span>
+              </p>
+              <ul className="footer-contact-links" role="list">
+                {phones.map(({ number, href }) => (
+                  <li className="footer-detail" key={href}>
+                    <a className="footer-link" href={href}><Phone size={16} aria-hidden="true" /> {number}</a>
+                  </li>
+                ))}
+                {emailHref && (
+                  <li className="footer-detail">
+                    <a className="footer-link" href={emailHref}><Mail size={16} aria-hidden="true" /> Email</a>
+                  </li>
+                )}
+              </ul>
+            </address>
+          </section>
         </div>
-        <p className="footer-copyright">© {year} {company.name}</p>
+        <div className="footer-bottom">
+          <div>
+            <p className="footer-copyright">© {year} {company.name}</p>
+            <small className="footer-brand-status">Industrial imagery is illustrative.</small>
+          </div>
+          <ContactLinks variant="footer" />
+        </div>
       </div>
     </footer>
   );

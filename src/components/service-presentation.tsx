@@ -1,9 +1,9 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { EditorialPhoto } from "@/components/editorial-photo";
+import { InnerPageHero } from "@/components/inner-page-hero";
 import { ContactCallout } from "@/components/supply-sections";
-import { company } from "@/content/company";
 import { serviceImages, type EditorialImage } from "@/content/editorial-images";
 import { serviceHref, services, type Service } from "@/content/services";
 
@@ -14,20 +14,17 @@ export function ServiceHero({ title, description, image, showBackLink = false }:
   showBackLink?: boolean;
 }) {
   return (
-    <section className="home-hero service-hero" aria-labelledby="service-page-title">
-      <div className="site-container service-hero-inner">
-        <div className="hero-copy">
-          {showBackLink ? (
-            <Link href="/services" className="section-label service-back-link">All Services</Link>
-          ) : (
-            <p className="section-label">{company.name}</p>
-          )}
-          <h1 id="service-page-title">{title}</h1>
-          <p className="hero-business">{description}</p>
-        </div>
-        <EditorialPhoto image={image} className="page-hero-photo" priority />
-      </div>
-    </section>
+    <InnerPageHero
+      id="service-page-title"
+      title={title}
+      description={description}
+      image={image}
+      label={showBackLink ? (
+        <Link href="/services" className="inner-hero-back">
+          <ArrowLeft size={16} aria-hidden="true" /> All Services
+        </Link>
+      ) : undefined}
+    />
   );
 }
 

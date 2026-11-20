@@ -66,14 +66,6 @@
   font-size: .75rem;
 }
 
-.page-hero-photo {
-  width: 100%;
-  aspect-ratio: 2 / 1;
-  border: 1px solid #52748f;
-  border-radius: .4rem;
-  box-shadow: 0 16px 28px rgb(3 16 30 / .24);
-}
-
 .intro-photo { aspect-ratio: 1.55; border-radius: .5rem; }
 .intro-photo img { object-position: center; }
 .about-preview .text-link, .portfolio-detail-link { display: inline-flex; min-height: 2.75rem; align-items: center; margin-top: .7rem; }
@@ -171,7 +163,6 @@
   .editorial-hero-inner { min-height: 31rem; padding-block: 3.75rem; }
   .editorial-hero-photo img { object-position: 58% center; }
   .editorial-hero .hero-copy h1 { font-size: clamp(2.05rem, 7vw, 3.2rem); }
-  .page-hero-photo { max-width: 29rem; aspect-ratio: 2.2; }
   .intro-photo { aspect-ratio: 1.85; }
   .about-preview .section-split > .intro-photo { grid-row: 2; }
   .product-grid.editorial-products, .tyre-section .section-split { grid-template-columns: minmax(0, 1fr); }
@@ -183,7 +174,6 @@
   .service-card.editorial-service-card { flex-direction: row; }
   .service-card-photo { width: 31%; flex: none; aspect-ratio: auto; }
   .editorial-service-copy { min-width: 0; }
-  .contact-hero-photo { display: none; }
 }
 
 @media (prefers-reduced-motion: no-preference) {

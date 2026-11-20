@@ -1,5 +1,5 @@
-import { BookOpenText, BriefcaseBusiness, Mail, Play } from "lucide-react";
-import { emailHref, socialLinks } from "@/content/site";
+import { BookOpenText, BriefcaseBusiness, Play } from "lucide-react";
+import { socialLinks } from "@/content/site";
 
 const socialPlatforms = [
   { key: "linkedin", name: "LinkedIn", icon: BriefcaseBusiness },
@@ -11,24 +11,34 @@ export function ContactLinks({ variant }: { variant: "contact" | "footer" }) {
   const links = socialPlatforms.map(({ key, name, icon }) => ({ name, Icon: icon, href: socialLinks[key] }));
 
   if (variant === "footer") {
-    const verified = links.flatMap(({ name, Icon, href }) => href ? [{ name, Icon, href }] : []);
-    if (!emailHref && verified.length === 0) return null;
-
     return (
-      <div className="footer-icons" aria-label="Online contact links" role="group">
-        {emailHref && <a className="footer-icon" href={emailHref} aria-label="Email"><Mail size={17} aria-hidden="true" /></a>}
-        {verified.map(({ name, Icon, href }) => (
-          <a
-            key={name}
-            className="footer-icon"
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${name} (opens in a new tab)`}
-          >
-            <Icon size={17} aria-hidden="true" />
-          </a>
-        ))}
+      <div className="footer-social">
+        <div>
+          <h2 id="footer-social-title">Social media</h2>
+          {links.every(({ href }) => !href) && <p>Profiles pending verification</p>}
+        </div>
+        <ul className="footer-icons" aria-labelledby="footer-social-title" role="list">
+          {links.map(({ name, Icon, href }) => (
+            <li key={name}>
+              {href ? (
+                <a
+                  className="footer-icon"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${name} (opens in a new tab)`}
+                >
+                  <Icon size={17} aria-hidden="true" />
+                </a>
+              ) : (
+                <span className="footer-icon" data-unavailable title={name}>
+                  <Icon size={17} aria-hidden="true" />
+                  <span className="sr-only">{name} pending verification</span>
+                </span>
+              )}
+            </li>
+          ))}
+        </ul>
       </div>
     );
   }

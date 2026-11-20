@@ -1,6 +1,7 @@
 import { Building2, CircleCheck, FileText, MapPin } from "lucide-react";
 import Link from "next/link";
 import { EditorialPhoto } from "@/components/editorial-photo";
+import { InnerPageHero } from "@/components/inner-page-hero";
 import { ContactCallout, ProcurementApproach } from "@/components/supply-sections";
 import { capabilities, company } from "@/content/company";
 import { serviceImages } from "@/content/editorial-images";
@@ -16,13 +17,14 @@ export const metadata = makePageMetadata({
 export default function AboutPage() {
   return (
     <>
-      <section className="home-hero about-hero" aria-labelledby="about-page-title">
-        <div className="site-container section-split">
-          <div className="hero-copy">
-            <p className="section-label">{company.name}</p>
-            <h1 id="about-page-title">About Us</h1>
-            <p className="hero-business">Supply support for institutional, industrial and project procurement.</p>
-          </div>
+      <InnerPageHero
+        id="about-page-title"
+        title="About Us"
+        description="Supply support for institutional, industrial and project procurement."
+        image={serviceImages["general-order-supply"]}
+      />
+      <div className="about-facts-band">
+        <div className="site-container">
           <dl className="about-facts">
             <div>
               <dt><Building2 size={22} aria-hidden="true" />Business nature</dt>
@@ -38,12 +40,12 @@ export default function AboutPage() {
             </div>
           </dl>
         </div>
-      </section>
+      </div>
 
       <section className="section-space" aria-labelledby="overview-title">
         <div className="site-container">
           <div className="section-split overview-with-photo">
-            <EditorialPhoto image={serviceImages["general-order-supply"]} className="intro-photo" />
+            <EditorialPhoto image={serviceImages["procurement-project-support"]} className="intro-photo" />
             <div>
               <h2 id="overview-title">Company Overview</h2>
               <p className="section-description">{company.overview}</p>

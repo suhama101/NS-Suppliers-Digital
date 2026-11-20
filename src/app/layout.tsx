@@ -6,6 +6,7 @@ import { company } from "@/content/company";
 import { allowSearchIndexing, homeTitle, siteOrigin } from "@/lib/site-metadata";
 import "./globals.css";
 import "./editorial.css";
+import "./page-chrome.css";
 
 export const metadata: Metadata = {
   title: {

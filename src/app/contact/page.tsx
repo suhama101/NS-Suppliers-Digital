@@ -1,7 +1,7 @@
 import { ClipboardList, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import { ContactLinks } from "@/components/contact-links";
-import { EditorialPhoto } from "@/components/editorial-photo";
+import { InnerPageHero } from "@/components/inner-page-hero";
 import { company } from "@/content/company";
 import { serviceImages } from "@/content/editorial-images";
 import { businessContact, emailHref, officeMapsHref } from "@/content/site";
@@ -26,20 +26,17 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="home-hero" aria-labelledby="contact-page-title">
-        <div className={`site-container ${styles.hero}`}>
-          <div className="hero-copy">
-            <p className="section-label">{company.name}</p>
-            <h1 id="contact-page-title">Contact Us</h1>
-            <p className="hero-business">Get in touch to discuss industrial supply requirements, procurement inquiries or a request for quotation.</p>
-            <div className="hero-actions">
-              <a className="site-button button-gold" href={primaryPhone.href}>Call {primaryPhone.number}</a>
-              <a className="site-button button-outline" href="#office-location">Office location</a>
-            </div>
-          </div>
-          <EditorialPhoto image={serviceImages["procurement-project-support"]} className="page-hero-photo contact-hero-photo" priority />
+      <InnerPageHero
+        id="contact-page-title"
+        title="Contact Us"
+        description="Get in touch to discuss industrial supply requirements, procurement inquiries or a request for quotation."
+        image={serviceImages["procurement-project-support"]}
+      >
+        <div className="hero-actions">
+          <a className="site-button button-gold" href={primaryPhone.href}>Call {primaryPhone.number}</a>
+          <a className="site-button button-outline" href="#office-location">Office location</a>
         </div>
-      </section>
+      </InnerPageHero>
 
       <section className="section-space" id="office-location" aria-labelledby="contact-details-title">
         <div className="site-container">
