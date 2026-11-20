@@ -41,9 +41,9 @@
 
 .editorial-hero-inner {
   display: grid;
-  min-height: clamp(33rem, 49vw, 43rem);
+  min-height: clamp(36rem, 52vw, 46rem);
   align-items: center;
-  padding-block: 4.25rem;
+  padding-block: calc(var(--header-height) + 2.75rem) 4.25rem;
 }
 
 .editorial-hero .hero-copy h1 {
@@ -178,7 +178,7 @@
 
 @media (width < 43rem) {
   .editorial-hero::after { background: linear-gradient(90deg, #061d36f5, #071f39d9 46%, #071f398c); }
-  .editorial-hero-inner { min-height: 31rem; padding-block: 3.75rem; }
+  .editorial-hero-inner { min-height: 34rem; padding-block: calc(var(--header-height) + 2rem) 3.5rem; }
   .editorial-hero-photo img { object-position: 58% center; }
   .editorial-hero .hero-copy h1 { font-size: clamp(2.05rem, 7vw, 3.2rem); }
   .intro-photo { aspect-ratio: 1.85; }

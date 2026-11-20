@@ -14,6 +14,7 @@ export function SiteHeader() {
 }
 
 function HeaderNavigation({ pathname }: { pathname: string }) {
+  const home = pathname === "/";
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const header = useRef<HTMLElement>(null);
@@ -22,8 +23,22 @@ function HeaderNavigation({ pathname }: { pathname: string }) {
   const servicesToggle = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    header.current?.setAttribute("data-enhanced", "true");
-  }, []);
+    const element = header.current;
+    if (!element) return;
+
+    element.setAttribute("data-enhanced", "true");
+    if (!home) return;
+
+    const updateSurface = () => element.toggleAttribute("data-scrolled", window.scrollY >= 32);
+
+    updateSurface();
+    window.addEventListener("scroll", updateSurface, { passive: true });
+    window.addEventListener("pageshow", updateSurface);
+    return () => {
+      window.removeEventListener("scroll", updateSurface);
+      window.removeEventListener("pageshow", updateSurface);
+    };
+  }, [home]);
 
   function closeNavigation() {
     setMenuOpen(false);
@@ -46,6 +61,7 @@ function HeaderNavigation({ pathname }: { pathname: string }) {
   return (
     <header
       className="site-header"
+      data-home={home || undefined}
       ref={header}
       onBlur={(event) => {
         if (!event.currentTarget.contains(event.relatedTarget)) closeNavigation();

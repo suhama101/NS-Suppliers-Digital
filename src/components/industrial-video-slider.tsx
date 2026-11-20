@@ -135,7 +135,7 @@ export function IndustrialVideoSlider() {
 
   return (
     <section ref={section} className={`section-space ${styles.section}`} aria-labelledby="industrial-video-heading">
-      <div className="site-container">
+      <div className={`site-container ${styles.inner}`}>
         <h2 id="industrial-video-heading">Industrial Supply Portfolio</h2>
 
         <div className={styles.slider} role="group" aria-roledescription="carousel" aria-label="Industrial supply videos">
