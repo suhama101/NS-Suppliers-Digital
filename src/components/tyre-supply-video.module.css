@@ -1,0 +1,23 @@
+.media {
+  position: relative;
+  overflow: hidden;
+  background: #e1e8ef;
+}
+
+.media > picture, .media > video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.media > video {
+  object-fit: cover;
+  opacity: 0;
+}
+
+.media > video[data-playing] { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .media > video[data-playing] { opacity: 0; }
+}

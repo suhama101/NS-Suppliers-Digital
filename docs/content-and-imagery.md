@@ -49,6 +49,8 @@ The exported clips are silent, 960 × 540 H.264 MP4s at 25 fps with the metadata
 
 The About Us hero reuses `handling.mp4` and its WebP poster. That cargo-crane clip runs as a muted decorative loop when the banner is visible and motion is permitted. No new footage or duplicative asset was added.
 
+The homepage Heavy-Vehicle Tyre Supply section uses [Chris Flaten’s close-up of truck tyres](https://www.pexels.com/video/a-close-up-shot-of-truck-tires-4157778/) as illustrative stock footage under the [Pexels License](https://www.pexels.com/license/). The local `public/videos/industrial/truck-tyres.mp4` is a silent 832 × 468 H.264 export with progressive playback. The section reuses `public/images/industrial/tyres.webp` as its still fallback.
+
 The Instagram, Facebook, LinkedIn and YouTube glyphs are from [Font Awesome Free 6](https://github.com/FortAwesome/Font-Awesome/tree/6.x/svgs/brands), © Fonticons, Inc., under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The published paths and viewboxes are unchanged and are embedded in [social-icon.tsx](../src/components/social-icon.tsx).
 
 ## Image generation prompts

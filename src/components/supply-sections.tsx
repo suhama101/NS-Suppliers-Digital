@@ -1,6 +1,7 @@
 import { ArrowRight, ChevronDown, ClipboardCheck, FileText, Truck } from "lucide-react";
 import Link from "next/link";
 import { EditorialPhoto } from "@/components/editorial-photo";
+import { TyreSupplyVideo } from "@/components/tyre-supply-video";
 import { company, heavyVehicleTyres, procurementSteps } from "@/content/company";
 import { productImages, tyreImage } from "@/content/editorial-images";
 import { productDetails } from "@/content/product-details";
@@ -53,7 +54,7 @@ export function TyreSupply({ preview = false }: { preview?: boolean }) {
   return (
     <section className="section-space tyre-section" id="heavy-vehicle-tyres" aria-labelledby="tyre-title">
       <div className="site-container section-split">
-        <EditorialPhoto image={tyreImage} className="tyre-photo" square />
+        {preview ? <TyreSupplyVideo /> : <EditorialPhoto image={tyreImage} className="tyre-photo" square />}
         <div>
           <h2 id="tyre-title">Heavy-Vehicle Tyre Supply</h2>
           <p className="section-description">{company.tyreSupply}</p>
