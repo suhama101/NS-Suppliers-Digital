@@ -61,8 +61,8 @@ The `.blog.tsx` page extension enables the dynamic article route only when the c
 
 Maintain product categories in `src/content/products.ts` and contact details in `src/content/site.ts`. The Contact page and footer both read from that configuration.
 
-- Verify the office address and its Google Maps search result with the client, update the address if required, and set `officeAddressConfirmed` to `true` to enable Maps. Until then, the office card offers a phone call to confirm the location.
-- The company profile prints `noshirwan900@gamil.com`. Confirm the exact email address with the client, update `email.address` with the confirmed spelling, and set `email.confirmed` to `true` to activate the email links.
+- The office address follows the letterhead transcription. Keep `officeMapsUrl` as `null` until the client verifies the exact pin and supplies its HTTPS link. The office card offers a phone call in the meantime.
+- The letterhead transcription prints `noshirwan900@gamil.com`. It appears as plain text until the client confirms the actual mailbox. Update `email.address` if required and set `email.confirmed` to `true` only after confirmation.
 - Add only verified HTTPS profile URLs to `socialLinks`. A `null` entry displays as unavailable on Contact and is omitted from the footer.
 
 Maintain service summaries in `src/content/services.ts`. When the client approves the IT scope and engagement details, populate `src/content/it-services.ts`, update the IT summary, and clear its `pendingApproval` flag.

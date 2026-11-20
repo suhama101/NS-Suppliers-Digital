@@ -72,6 +72,7 @@ export function IndustrialSuppliesDetails() {
           <p className="section-description">
             Explore tooling, lifting equipment, finishing materials, maintenance consumables and worksite protection, alongside raw materials and replacement components.
           </p>
+          <p className="section-description">Specific brands, standards, ratings, sizes and quantities can be defined in the client RFQ, tender or purchase order.</p>
           <ProductCards categories={categories} />
         </div>
       </section>

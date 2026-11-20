@@ -172,7 +172,6 @@ export function IndustrialVideoSlider() {
                 </div>
               );
             })}
-            <span className={styles.disclosure}>Illustrative stock footage</span>
           </div>
 
           <div className={styles.details}>

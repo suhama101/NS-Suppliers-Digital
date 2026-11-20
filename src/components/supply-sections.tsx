@@ -38,7 +38,7 @@ export function ProductCards({ categories, showLinks = false }: {
                   ))}
                 </dl>
                 {(slug === "industrial-raw-materials" || slug === "industrial-spare-parts") && (
-                  <p>Examples are indicative and subject to RFQ. Confirm requirements and availability when requesting a quotation.</p>
+                  <p>Examples are indicative and subject to RFQ. They do not confirm stock or brand commitments.</p>
                 )}
               </details>
             )}

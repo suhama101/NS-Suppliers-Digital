@@ -27,7 +27,6 @@ export function HomeHero() {
           </div>
         </div>
       </div>
-      <small className="editorial-caption">Illustrative imagery</small>
     </section>
   );
 }

@@ -2,7 +2,7 @@
 
 ## Company profile coverage
 
-The source is the supplied 12-page `Noshirwan_Sons_Company_Profile_Corrected.pdf`. Page numbers below refer to the physical PDF order. Product examples are condensed for readability.
+The source is the supplied 12-page `Noshirwan_Sons_Company_Profile_Corrected.pdf`. Page numbers below refer to the physical PDF order. Homepage previews are concise. The service detail pages carry the complete textual product lists. See the [item-by-item product profile audit](product-profile-audit.md).
 
 | PDF pages | Contents | Website coverage |
 | --- | --- | --- |
@@ -15,8 +15,8 @@ The source is the supplied 12-page `Noshirwan_Sons_Company_Profile_Corrected.pdf
 | 7 | Lubricants, oils, greases, maintenance fluids, adhesives, fasteners, cutting and cleaning supplies | Industrial & Construction Supplies. General Order Supply also includes the hardware and fasteners range. |
 | 8 | Electrical, plumbing, sanitary and personal protective equipment | Industrial & Construction Supplies and General Order Supply. |
 | 9 | Indicative raw-material and spare-part families and RFQ requirements | Industrial & Construction Supplies. Examples remain subject to RFQ, including purchaser specifications and the relevant compatibility checks. |
-| 10 | Heavy-vehicle tyres and three procurement steps | The Home page links to the three tyre options on General Order Supply. Bridgestone, Pakistani and China-origin options are shown in size 1000/20, subject to quotation, client acceptance and availability. Home, About, Services, General Order Supply and Procurement & Project Support explain the procurement steps. |
-| 11 | Registered business information, NTN, office address, phones, email and commitment | About shows NTN 7927069-4 and the company commitment. Contact and the footer retain the address verification notice and both telephone numbers. The PDF email spelling remains in configuration with the email action inactive. |
+| 10 | Heavy-vehicle tyres and three procurement steps | Home links to the three source-named options on General Order Supply, each in size 1000/20 and subject to quotation, client acceptance and availability. Home, About, Services, General Order Supply and Procurement & Project Support explain the procurement steps. |
+| 11 | Registered business information, NTN, office address, phones, email and commitment | About shows NTN 7927069-4 and the company commitment. Contact and the footer follow the latest letterhead transcription. The printed email is shown as plain text, and the Maps link awaits verification of the exact pin. |
 | 12 | Corporate signatory block | Retained in the source PDF. Website content omits the signature block and makes no signatory claim. |
 
 The profile provides no concrete IT offerings. The IT Services page continues to indicate that its scope is awaiting approval. The Blog publishes approved articles only.
@@ -24,7 +24,7 @@ The profile provides no concrete IT offerings. The IT Services page continues to
 ## Artwork and asset provenance
 
 - `public/images/ns-profile-mark.png` is an isolated crop of the client-supplied PDF cover mark. The favicon and sharing card incorporate that source artwork. Request an original vector or higher-resolution master for future use and confirm final brand sign-off.
-- All assets in `public/images/industrial/` are original AI-generated editorial illustrations created using the built-in OpenAI ImageGen tool. They depict generic equipment and settings. The hero and footer identify them as illustrative, and the image descriptions carry the same context. [OpenAI Terms of Use](https://openai.com/policies/terms-of-use/)
+- All assets in `public/images/industrial/` are original AI-generated editorial illustrations created using the built-in OpenAI ImageGen tool. They depict generic equipment and settings. The footer and image alternative text disclose their illustrative use. [OpenAI Terms of Use](https://openai.com/policies/terms-of-use/)
 - Each generated file is served locally as WebP. The warehouse uses separate desktop and mobile crops. The service and product sheets were cropped into individual files. No reference-site photos or external stock assets were used.
 
 | Asset files under `public/images/industrial/` | Subject |
@@ -37,7 +37,7 @@ The profile provides no concrete IT offerings. The IT Services page continues to
 
 ## Industrial Supply Portfolio video register
 
-These three Mixkit clips illustrate industrial equipment and logistics. The website identifies the clips as stock footage. Each item page confirms commercial use under the [Mixkit Stock Video Free License](https://mixkit.co/license/modal/videoFree/), which permits modifications and does not require attribution. The source credits are recorded here.
+These three Mixkit clips illustrate industrial equipment and logistics. The footer discloses use of stock footage. Each item page confirms commercial use under the [Mixkit Stock Video Free License](https://mixkit.co/license/modal/videoFree/), which permits modifications and does not require attribution. The source credits are recorded here.
 
 | Local clip | Source | Export length | MP4 bytes | Poster bytes |
 | --- | --- | ---: | ---: | ---: |

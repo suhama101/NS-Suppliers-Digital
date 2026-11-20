@@ -4,7 +4,7 @@ import { ContactLinks } from "@/components/contact-links";
 import { InnerPageHero } from "@/components/inner-page-hero";
 import { company } from "@/content/company";
 import { serviceImages } from "@/content/editorial-images";
-import { businessContact, emailHref, officeMapsHref } from "@/content/site";
+import { businessContact, emailHref } from "@/content/site";
 import { makePageMetadata } from "@/lib/site-metadata";
 import styles from "./contact.module.css";
 
@@ -21,7 +21,7 @@ const inquiryDetails = [
 ];
 
 export default function ContactPage() {
-  const { officeAddress, officeAddressConfirmed, phones, email } = businessContact;
+  const { officeAddress, officeMapsUrl, phones, email } = businessContact;
   const primaryPhone = phones[0];
 
   return (
@@ -46,9 +46,12 @@ export default function ContactPage() {
               <span className="icon-tile"><MapPin size={24} aria-hidden="true" /></span>
               <h3 id="office-title">Office Location</h3>
               <address className={styles.address}>{officeAddress.join(" ")}</address>
-              {!officeAddressConfirmed && <p className={styles.verification}>Address pending final verification. Please call before visiting.</p>}
-              {officeMapsHref ? (
-                <a className="site-button button-gold" href={officeMapsHref} target="_blank" rel="noopener noreferrer">
+              <div className={styles.registration}>
+                <p>{company.businessType}</p>
+                <p>NTN {company.taxNumber}</p>
+              </div>
+              {officeMapsUrl ? (
+                <a className="site-button button-gold" href={officeMapsUrl} target="_blank" rel="noopener noreferrer">
                   Open in Google Maps<span className="sr-only"> (opens in a new tab)</span>
                 </a>
               ) : (
@@ -71,7 +74,10 @@ export default function ContactPage() {
                   {emailHref ? (
                     <a className={`text-link ${styles.contactAction}`} href={emailHref}>{email.address}</a>
                   ) : (
-                    <p className={styles.verification}>Email pending verification. Please call for business inquiries.</p>
+                    <>
+                      <p className={styles.printedEmail}>{email.address}</p>
+                      <p className={styles.verification}>Email confirmation pending. Please call for business inquiries.</p>
+                    </>
                   )}
                 </div>
               </section>

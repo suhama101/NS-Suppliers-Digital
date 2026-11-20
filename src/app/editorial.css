@@ -55,17 +55,6 @@
 .editorial-hero .hero-business { color: #edf4fa; }
 .editorial-hero .hero-location { color: #e5edf4; }
 
-.editorial-caption {
-  position: absolute;
-  right: max(1rem, calc((100vw - 74rem) / 2));
-  bottom: .85rem;
-  padding: .2rem .45rem;
-  border-radius: .2rem;
-  background: #071f39e8;
-  color: #fff;
-  font-size: .75rem;
-}
-
 .intro-photo { aspect-ratio: 1.55; border-radius: .5rem; }
 .intro-photo img { object-position: center; }
 .about-preview .text-link, .portfolio-detail-link { display: inline-flex; min-height: 2.75rem; align-items: center; margin-top: .7rem; }

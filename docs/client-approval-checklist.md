@@ -4,8 +4,8 @@ Use this checklist to record the client’s launch decisions for M/S Noshirwan &
 
 ## Required before public launch
 
-- [ ] **Business contact.** Confirm the office address shown in the PDF and both business phone numbers. Test that the numbers reach the intended business contact. Approve the published address or agree how it should be presented while verification is pending.
-- [ ] **Maps and email.** Verify the exact office pin before enabling Maps. Confirm the official email spelling and test receipt before enabling email. The PDF prints `noshirwan900@gamil.com`. The client can approve a phone-only launch while these channels are pending.
+- [ ] **Business contact.** The Contact page and footer use the supplied letterhead transcription. Test that both listed numbers reach the intended business contact.
+- [ ] **Maps and email.** Verify the exact office pin before enabling Maps. Confirm the official email spelling and test receipt before enabling email. The letterhead transcription prints `noshirwan900@gamil.com`, which appears as plain text.
 - [ ] **IT Services.** Approve what may be published, or explicitly approve keeping the current pending-scope notice at launch. Supply the approved service names and descriptions, who the services are for, what information an enquiry should include, and the preferred contact or engagement process.
 - [ ] **Launch origin and indexing.** Approve the Vercel URL or provide the final custom domain. Make a separate decision about search indexing. Set `SITE_URL` at build time for an approved custom domain and set `SITE_INDEXABLE=true` only for an approved indexable production build. Verify the live canonical tags, robots metadata, response headers and sitemap before announcing launch. Review builds default to `noindex, follow`.
 - [ ] **Branding sign-off.** Confirm the company profile mark and its favicon and sharing card adaptations for website use.
@@ -22,6 +22,6 @@ Use this checklist to record the client’s launch decisions for M/S Noshirwan &
 
 ## Updating approved content
 
-Contact data lives in [`src/content/site.ts`](../src/content/site.ts). Set `officeAddressConfirmed` only after confirming the address and opening the exact Google Maps result produced by the site’s address search. If the search produces the wrong pin, use the client’s verified location link before activation. Update `email.address` with the confirmed address and set `email.confirmed` only after verification.
+Contact data lives in [`src/content/site.ts`](../src/content/site.ts). Populate `officeMapsUrl` with the exact HTTPS pin link only after client verification. Update `email.address` with the confirmed address and set `email.confirmed` only after verification.
 
 Add approved service scope and engagement details to [`src/content/it-services.ts`](../src/content/it-services.ts). Update the IT summary in [`src/content/services.ts`](../src/content/services.ts) and clear `pendingApproval` once the client has approved the published scope.

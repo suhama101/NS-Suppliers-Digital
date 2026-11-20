@@ -7,7 +7,7 @@ import { serviceHref, services } from "@/content/services";
 import { businessContact, emailHref, navigation } from "@/content/site";
 
 export function SiteFooter() {
-  const { officeAddress, officeAddressConfirmed, phones } = businessContact;
+  const { officeAddress, phones, email } = businessContact;
   const year = new Intl.DateTimeFormat("en", { year: "numeric", timeZone: "Asia/Karachi" }).format();
 
   return (
@@ -16,7 +16,8 @@ export function SiteFooter() {
         <div className="footer-lead">
           <div className="footer-intro">
             <SiteBrand />
-            <p>{company.description}</p>
+            <p>{company.businessType}</p>
+            <p className="footer-registration">NTN {company.taxNumber}</p>
           </div>
           <Link className="site-button footer-contact-link" href="/contact">
             Contact Us <ArrowUpRight size={17} aria-hidden="true" />
@@ -44,10 +45,7 @@ export function SiteFooter() {
             <address className="footer-contact">
               <p className="footer-detail">
                 <MapPin size={17} aria-hidden="true" />
-                <span>
-                  {officeAddress.join(" ")}
-                  {!officeAddressConfirmed && <small className="footer-address-status">Address pending verification</small>}
-                </span>
+                <span>{officeAddress.join(" ")}</span>
               </p>
               <ul className="footer-contact-links" role="list">
                 {phones.map(({ number, href }) => (
@@ -55,19 +53,20 @@ export function SiteFooter() {
                     <a className="footer-link" href={href}><Phone size={16} aria-hidden="true" /> {number}</a>
                   </li>
                 ))}
-                {emailHref && (
-                  <li className="footer-detail">
-                    <a className="footer-link" href={emailHref}><Mail size={16} aria-hidden="true" /> Email</a>
-                  </li>
-                )}
               </ul>
+              <p className="footer-detail footer-email">
+                <Mail size={16} aria-hidden="true" />
+                {emailHref ? <a href={emailHref}>{email.address}</a> : (
+                  <span>{email.address}<small>Email confirmation pending</small></span>
+                )}
+              </p>
             </address>
           </section>
         </div>
         <div className="footer-bottom">
           <div>
             <p className="footer-copyright">© {year} {company.name}</p>
-            <small className="footer-brand-status">Industrial imagery is illustrative.</small>
+            <small className="footer-brand-status">Industrial images and videos are illustrative stock or generated media.</small>
           </div>
           <ContactLinks variant="footer" />
         </div>

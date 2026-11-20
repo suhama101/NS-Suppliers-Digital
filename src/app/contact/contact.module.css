@@ -54,7 +54,8 @@
   line-height: 1.5;
 }
 
-.officeCard .verification { margin: 0 0 1.25rem; }
+.registration { margin-bottom: 1.25rem; color: var(--color-navy); }
+.printedEmail { margin-top: .45rem; color: var(--color-navy); font-weight: 650; overflow-wrap: anywhere; }
 
 .contactAction {
   display: inline-flex;

@@ -2,17 +2,19 @@ type BusinessPhone = { number: string; href: `tel:+${string}` };
 
 type BusinessContact = {
   officeAddress: readonly string[];
-  officeAddressConfirmed: boolean;
+  officeMapsUrl: `https://${string}` | null;
   phones: readonly [BusinessPhone, ...BusinessPhone[]];
   email: { address: string; confirmed: boolean };
 };
 
 export const businessContact: BusinessContact = {
   officeAddress: [
-    "Office No. 28, Al-Behbood Plaza, Aslam Market,",
-    "Near NADRA Office, Wah Cantt, Pakistan.",
+    "Office No. 28, Al-Behbood Plaza,",
+    "Aslam Market,",
+    "Near NADRA Office,",
+    "Wah Cantt, Pakistan.",
   ],
-  officeAddressConfirmed: false,
+  officeMapsUrl: null,
   phones: [
     { number: "0346-2039874", href: "tel:+923462039874" },
     { number: "0348-1144409", href: "tel:+923481144409" },
@@ -30,12 +32,6 @@ export const socialLinks: Record<SocialPlatform, `https://${string}` | null> = {
 
 export const emailHref = businessContact.email.confirmed
   ? `mailto:${businessContact.email.address}`
-  : null;
-
-const mapsQuery = new URLSearchParams({ api: "1", query: businessContact.officeAddress.join(" ") });
-
-export const officeMapsHref = businessContact.officeAddressConfirmed
-  ? `https://www.google.com/maps/search/?${mapsQuery}`
   : null;
 
 export const navigation = [

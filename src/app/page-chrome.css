@@ -64,18 +64,6 @@
 }
 .inner-hero-back:hover { color: #fff; }
 
-.inner-page-hero-credit {
-  position: absolute;
-  right: 1rem;
-  bottom: 1.05rem;
-  padding: .2rem .48rem;
-  border: 1px solid #eaf3fa45;
-  border-radius: .2rem;
-  background: #0a223bee;
-  color: #f3f7fa;
-  font-size: .75rem;
-}
-
 .about-facts-band { border-bottom: 1px solid var(--color-rule); background: #edf3f8; }
 .about-facts { display: grid; grid-template-columns: 1.4fr .95fr 1fr; }
 .about-facts > div { padding: 1rem 1rem 1rem 2.85rem; }
@@ -115,6 +103,7 @@
 .footer-lead { padding-bottom: clamp(1.2rem, 3vw, 2rem); border-bottom: 1px solid #4f6981; }
 .footer-intro .site-brand { width: fit-content; color: #fff; font-size: clamp(1.08rem, 2.3vw, 1.5rem); }
 .footer-intro p { max-width: 31rem; margin-top: .65rem; line-height: 1.6; }
+.footer-intro .footer-registration { margin-top: .2rem; }
 .footer-contact-link { flex: none; gap: .55rem; border-color: #e9c34b; color: #ffdc66; }
 .footer-contact-link:hover { background: #ffdc66; color: #0b283f; }
 
@@ -150,8 +139,10 @@
 .footer-detail svg { margin-top: .2em; flex: none; color: var(--color-gold); }
 .footer-detail a { gap: .4rem; text-decoration: underline; text-underline-offset: .23em; }
 .footer-detail a svg { margin-top: 0; }
-.footer-address-status { display: block; margin-top: .2rem; color: #ffdc83; font-size: .875rem; }
 .footer-contact-links { display: flex; flex-wrap: wrap; gap: 0 1rem; margin-top: .25rem; }
+.footer-email { margin-top: .3rem; overflow-wrap: anywhere; }
+.footer-email small { display: block; color: #ffdc83; font-size: .875rem; }
+.footer-email a { min-height: 2.75rem; }
 
 .footer-bottom { padding-block: .95rem 1.2rem; border-top: 1px solid #4f6981; }
 .footer-copyright, .footer-brand-status, .footer-social p { color: #bdcfe1; font-size: .875rem; }
@@ -190,7 +181,6 @@ a.footer-icon:hover { border-color: var(--color-gold); color: var(--color-gold);
   .inner-page-hero .hero-copy { width: 100%; }
   .inner-page-hero h1 { font-size: clamp(2.35rem, 8.4vw, 3.65rem); }
   .inner-page-hero .hero-business { margin-top: .8rem; font-size: 1.04rem; }
-  .inner-page-hero-credit { bottom: .55rem; }
   .about-facts { grid-template-columns: 1fr; padding-block: .3rem; }
   .about-facts > div { padding-block: .65rem; padding-left: 2.15rem; }
   .about-facts > div + div { border-left: 0; border-top: 1px solid #cfdae4; }

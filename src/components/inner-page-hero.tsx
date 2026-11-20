@@ -23,7 +23,6 @@ export function InnerPageHero({ id, title, description, image, label, children }
           <p className="hero-business">{description}</p>
           {children}
         </div>
-        <span className="inner-page-hero-credit">Illustrative imagery</span>
       </div>
     </section>
   );
