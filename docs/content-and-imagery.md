@@ -45,7 +45,7 @@ These three Mixkit clips illustrate industrial equipment and logistics. The webs
 | `public/videos/industrial/construction.mp4` | [Excavation crane lifts a rock into a truck](https://mixkit.co/free-stock-video/excavation-crane-lifts-a-rock-into-a-truck-4069/) | 9 s | 631,328 | 85,108 |
 | `public/videos/industrial/handling.mp4` | [Cranes working on unloading dock](https://mixkit.co/free-stock-video/cranes-working-on-unloading-dock-4012/) | 10 s | 1,069,136 | 35,560 |
 
-The exported clips are silent, 960 × 540 H.264 MP4s at 25 fps with the metadata moved to the front for progressive playback. The construction clip was reframed to exclude readable equipment branding. The corresponding WebP stills are in `public/images/video-posters/`. The carousel requests an MP4 only upon playback.
+The exported clips are silent, 960 × 540 H.264 MP4s at 25 fps with the metadata moved to the front for progressive playback. The construction clip was reframed to exclude readable equipment branding. The corresponding WebP stills are in `public/images/video-posters/`. The carousel starts muted playback when its frame comes into view and prepares only the next clip near the end of the current one. It defaults to a still poster when reduced motion is requested.
 
 ## Image generation prompts
 
