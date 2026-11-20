@@ -4,7 +4,7 @@ type BusinessContact = {
   officeAddress: readonly string[];
   officeMapsUrl: `https://${string}` | null;
   phones: readonly [BusinessPhone, ...BusinessPhone[]];
-  email: { address: string; confirmed: boolean };
+  email: string;
 };
 
 export const businessContact: BusinessContact = {
@@ -19,20 +19,20 @@ export const businessContact: BusinessContact = {
     { number: "0346-2039874", href: "tel:+923462039874" },
     { number: "0348-1144409", href: "tel:+923481144409" },
   ],
-  email: { address: "noshirwan900@gamil.com", confirmed: false },
+  email: "noshirwan900@gmail.com",
 };
 
-type SocialPlatform = "linkedin" | "medium" | "youtube";
+export type SocialPlatformId = "instagram" | "facebook" | "linkedin" | "youtube";
+export type SocialPlatform = { id: SocialPlatformId; name: string; officialUrl: `https://${string}` | null };
 
-export const socialLinks: Record<SocialPlatform, `https://${string}` | null> = {
-  linkedin: null,
-  medium: null,
-  youtube: null,
-};
+export const socialPlatforms: readonly SocialPlatform[] = [
+  { id: "instagram", name: "Instagram", officialUrl: null },
+  { id: "facebook", name: "Facebook", officialUrl: null },
+  { id: "linkedin", name: "LinkedIn", officialUrl: null },
+  { id: "youtube", name: "YouTube", officialUrl: null },
+];
 
-export const emailHref = businessContact.email.confirmed
-  ? `mailto:${businessContact.email.address}`
-  : null;
+export const emailHref = `mailto:${businessContact.email}`;
 
 export const navigation = [
   { href: "/", label: "Home" },

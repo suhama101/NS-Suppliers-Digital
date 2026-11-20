@@ -67,7 +67,7 @@ The route abbreviations below refer to [Industrial & Construction Supplies](http
 | 10 | Coordinate Delivery | Procurement sections | Complete | Sourcing, supply and dispatch according to agreed contract terms and timelines. |
 | 1, 11 | NTN | About, Contact and footer | Complete on About | 7927069-4 is also shown beside the contact information. |
 | 1, 11 | Office Address and Contact Numbers | Contact and footer | Summarized but accurate | The supplied letterhead transcription gives Office No. 28, Al-Behbood Plaza, Aslam Market, Near NADRA Office, Wah Cantt, Pakistan. Phones are 0346-2039874 and 0348-1144409. The exact Maps pin awaits verification. |
-| 1, 11 | Email | Contact and footer | Missing from public view | The supplied printed `noshirwan900@gamil.com` appears as text. The mail action awaits confirmation. |
+| 1, 11 | Email | Contact and footer | Missing from public view | Step 21 published the earlier printed spelling as plain text. The client subsequently confirmed `noshirwan900@gmail.com`, which replaced it in Step 22. |
 | 11 | Our Commitment | About → Our Commitment | Complete | Clear quotations, responsive coordination and supply against the specifications and conditions agreed with each client. |
 | 12 | Proprietor / Authorized Signatory | Source document only | Missing from website by design | The source presents a signatory block. The site omits individual names and signature material. |
 

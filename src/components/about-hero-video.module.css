@@ -1,0 +1,15 @@
+.media, .media img, .media video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.media { background: #19364e; }
+.media img, .media video { object-fit: cover; object-position: 57% 49%; }
+.media video { opacity: 0; }
+.media video[data-playing] { opacity: 1; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .media video { transition: opacity .3s ease-out; }
+}

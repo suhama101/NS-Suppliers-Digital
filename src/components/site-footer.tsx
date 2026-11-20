@@ -56,9 +56,7 @@ export function SiteFooter() {
               </ul>
               <p className="footer-detail footer-email">
                 <Mail size={16} aria-hidden="true" />
-                {emailHref ? <a href={emailHref}>{email.address}</a> : (
-                  <span>{email.address}<small>Email confirmation pending</small></span>
-                )}
+                <a href={emailHref}>{email}</a>
               </p>
             </address>
           </section>

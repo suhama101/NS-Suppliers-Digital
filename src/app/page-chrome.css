@@ -141,11 +141,10 @@
 .footer-detail a svg { margin-top: 0; }
 .footer-contact-links { display: flex; flex-wrap: wrap; gap: 0 1rem; margin-top: .25rem; }
 .footer-email { margin-top: .3rem; overflow-wrap: anywhere; }
-.footer-email small { display: block; color: #ffdc83; font-size: .875rem; }
 .footer-email a { min-height: 2.75rem; }
 
 .footer-bottom { padding-block: .95rem 1.2rem; border-top: 1px solid #4f6981; }
-.footer-copyright, .footer-brand-status, .footer-social p { color: #bdcfe1; font-size: .875rem; }
+.footer-copyright, .footer-brand-status { color: #bdcfe1; font-size: .875rem; }
 .footer-brand-status { display: block; margin-top: .15rem; }
 .footer-social { display: flex; flex-wrap: wrap; align-items: center; gap: .55rem 1rem; }
 .footer-icons { display: flex; flex-wrap: wrap; gap: .35rem; }
@@ -160,7 +159,6 @@
   color: #f4f7fa;
 }
 a.footer-icon:hover { border-color: var(--color-gold); color: var(--color-gold); }
-.footer-icon[data-unavailable] { border-color: #4a637c; color: #a6bbcf; }
 
 @media (width < 55rem) {
   .inner-page-hero .hero-copy { width: 66%; }

@@ -71,14 +71,7 @@ export default function ContactPage() {
                 <span className="icon-tile"><Mail size={22} aria-hidden="true" /></span>
                 <div>
                   <h3 id="email-title">Email</h3>
-                  {emailHref ? (
-                    <a className={`text-link ${styles.contactAction}`} href={emailHref}>{email.address}</a>
-                  ) : (
-                    <>
-                      <p className={styles.printedEmail}>{email.address}</p>
-                      <p className={styles.verification}>Email confirmation pending. Please call for business inquiries.</p>
-                    </>
-                  )}
+                  <a className={`text-link ${styles.contactAction}`} href={emailHref}>{email}</a>
                 </div>
               </section>
             </div>

@@ -1,5 +1,6 @@
 import { Building2, CircleCheck, FileText, MapPin } from "lucide-react";
 import Link from "next/link";
+import { AboutHeroVideo } from "@/components/about-hero-video";
 import { EditorialPhoto } from "@/components/editorial-photo";
 import { InnerPageHero } from "@/components/inner-page-hero";
 import { ContactCallout, ProcurementApproach } from "@/components/supply-sections";
@@ -21,7 +22,7 @@ export default function AboutPage() {
         id="about-page-title"
         title="About Us"
         description="Supply support for institutional, industrial and project procurement."
-        image={serviceImages["general-order-supply"]}
+        media={<AboutHeroVideo />}
       />
       <div className="about-facts-band">
         <div className="site-container">

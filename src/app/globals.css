@@ -408,8 +408,6 @@ a:focus-visible, button:focus-visible, main:focus-visible {
 }
 
 .contact-social-item svg { flex: none; }
-.contact-social-item small { display: block; font-size: .875rem; font-weight: 400; }
-.contact-social-item[data-unavailable] { border-style: dashed; background: var(--color-paper); color: var(--color-muted); }
 a.contact-social-item:hover { border-color: #a77c00; background: var(--color-paper); }
 
 @media (width < 56rem) {

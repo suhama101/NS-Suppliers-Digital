@@ -16,7 +16,7 @@ The source is the supplied 12-page `Noshirwan_Sons_Company_Profile_Corrected.pdf
 | 8 | Electrical, plumbing, sanitary and personal protective equipment | Industrial & Construction Supplies and General Order Supply. |
 | 9 | Indicative raw-material and spare-part families and RFQ requirements | Industrial & Construction Supplies. Examples remain subject to RFQ, including purchaser specifications and the relevant compatibility checks. |
 | 10 | Heavy-vehicle tyres and three procurement steps | Home links to the three source-named options on General Order Supply, each in size 1000/20 and subject to quotation, client acceptance and availability. Home, About, Services, General Order Supply and Procurement & Project Support explain the procurement steps. |
-| 11 | Registered business information, NTN, office address, phones, email and commitment | About shows NTN 7927069-4 and the company commitment. Contact and the footer follow the latest letterhead transcription. The printed email is shown as plain text, and the Maps link awaits verification of the exact pin. |
+| 11 | Registered business information, NTN, office address, phones, email and commitment | About shows NTN 7927069-4 and the company commitment. Contact and the footer follow the letterhead transcription with the Step 22 client-confirmed email correction. Maps awaits verification of the exact pin. |
 | 12 | Corporate signatory block | Retained in the source PDF. Website content omits the signature block and makes no signatory claim. |
 
 The profile provides no concrete IT offerings. The IT Services page continues to indicate that its scope is awaiting approval. The Blog publishes approved articles only.
@@ -46,6 +46,10 @@ These three Mixkit clips illustrate industrial equipment and logistics. The foot
 | `public/videos/industrial/handling.mp4` | [Cranes working on unloading dock](https://mixkit.co/free-stock-video/cranes-working-on-unloading-dock-4012/) | 10 s | 1,069,136 | 35,560 |
 
 The exported clips are silent, 960 × 540 H.264 MP4s at 25 fps with the metadata moved to the front for progressive playback. The construction clip was reframed to exclude readable equipment branding. The corresponding WebP stills are in `public/images/video-posters/`. The carousel starts muted playback when its frame comes into view and prepares only the next clip near the end of the current one. It defaults to a still poster when reduced motion is requested.
+
+The About Us hero reuses `handling.mp4` and its WebP poster. That cargo-crane clip runs as a muted decorative loop when the banner is visible and motion is permitted. No new footage or duplicative asset was added.
+
+The Instagram, Facebook, LinkedIn and YouTube glyphs are from [Font Awesome Free 6](https://github.com/FortAwesome/Font-Awesome/tree/6.x/svgs/brands), © Fonticons, Inc., under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The published paths and viewboxes are unchanged and are embedded in [social-icon.tsx](../src/components/social-icon.tsx).
 
 ## Image generation prompts
 

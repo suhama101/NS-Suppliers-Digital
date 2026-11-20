@@ -1,0 +1,83 @@
+.widget {
+  position: fixed;
+  z-index: 15;
+  right: max(.9rem, env(safe-area-inset-right));
+  bottom: calc(max(.9rem, env(safe-area-inset-bottom)) + var(--contact-lift, 0px));
+  color: var(--color-navy);
+}
+
+.toggle {
+  display: flex;
+  min-width: 2.85rem;
+  min-height: 2.85rem;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  padding-inline: .78rem;
+  border: 1px solid #b69019;
+  border-radius: .75rem;
+  background: var(--color-navy);
+  color: #ffdc66;
+  box-shadow: 0 5px 17px rgb(5 29 51 / .21);
+  font-size: .875rem;
+  font-weight: 750;
+  list-style: none;
+  cursor: pointer;
+}
+
+.toggle::-webkit-details-marker { display: none; }
+.toggle:hover, .widget[open] .toggle { background: #123b60; }
+.toggle:focus-visible { outline: 3px solid #287db7; outline-offset: 3px; }
+
+.panel {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + .6rem);
+  width: min(17rem, calc(100vw - 1.8rem - env(safe-area-inset-right)));
+  max-height: max(7rem, calc(100dvh - var(--header-height) - 5.6rem - env(safe-area-inset-bottom) - var(--contact-lift, 0px)));
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: .6rem;
+  border: 1px solid #cfdce7;
+  border-top: 2px solid #d2a819;
+  border-radius: .75rem;
+  background: #fff;
+  box-shadow: 0 12px 28px rgb(5 29 51 / .2);
+}
+
+.header { display: flex; align-items: center; justify-content: space-between; gap: .4rem; padding-left: .4rem; font-weight: 750; }
+.close { display: grid; min-width: 2.75rem; min-height: 2.75rem; place-items: center; border-radius: .4rem; cursor: pointer; }
+.widget:not([data-enhanced]) .close { visibility: hidden; }
+.close:hover { background: #edf3f8; }
+.actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .35rem; padding-top: .2rem; }
+.action {
+  display: flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: .4rem;
+  padding: .5rem;
+  border: 1px solid #d7e1ea;
+  border-radius: .45rem;
+  font-size: .8rem;
+  font-weight: 700;
+}
+.action:hover { border-color: #a68620; background: #fcf7e5; }
+.action svg { flex: none; width: 1rem; height: 1rem; }
+.action[data-platform="instagram"] svg { color: #ab216d; }
+.action[data-platform="facebook"] svg { color: #1859b8; }
+.action[data-platform="linkedin"] svg { color: #09608d; }
+.action[data-platform="youtube"] svg { color: #b72222; }
+
+@media (width < 43rem) {
+  .toggle { padding-inline: .6rem; }
+  .toggle span { display: none; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .toggle, .action, .close { transition: background-color .16s, border-color .16s; }
+  .widget[open] .panel { animation: reveal .18s ease-out both; }
+  @keyframes reveal {
+    from { opacity: .65; transform: translateY(.25rem); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
