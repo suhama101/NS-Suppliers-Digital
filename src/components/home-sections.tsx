@@ -44,7 +44,7 @@ export function CoreServices() {
 
 export function ProductHighlights() {
   return (
-    <section className="section-space" id="product-portfolio" aria-labelledby="products-title">
+    <section className="section-space product-portfolio" id="product-portfolio" aria-labelledby="products-title">
       <div className="site-container">
         <div className="section-split portfolio-intro">
           <h2 id="products-title">Product Portfolio Highlights</h2>

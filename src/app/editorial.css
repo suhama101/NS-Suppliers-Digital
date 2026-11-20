@@ -132,6 +132,70 @@
 .product-card-copy p { font-size: .94rem; }
 .product-spec-link { display: inline-flex; min-height: 2.75rem; align-items: center; gap: .35rem; font-size: .88rem; }
 
+.product-portfolio {
+  border-top: 1px solid #64707c;
+  background:
+    linear-gradient(180deg, #10192126, #10192100 42%, #101921e6),
+    linear-gradient(115deg, #121b25eb, #121b25bd 66%, #121b25db),
+    url("/images/industrial/supply.webp") center / cover no-repeat #101921;
+}
+
+.product-portfolio h2, .product-previews .product-card-copy h3 { color: #f7fafc; }
+.product-portfolio .section-description, .product-previews .product-card-copy p { color: #d9e4ee; }
+.product-portfolio .section-description { max-width: 37rem; }
+
+.product-portfolio .product-previews {
+  align-items: stretch;
+  gap: clamp(.8rem, 1.5vw, 1.25rem);
+  margin-top: clamp(1.35rem, 4vw, 2.5rem);
+}
+
+.product-previews .supply-product-card {
+  align-content: stretch;
+  gap: clamp(.7rem, 1.2vw, 1rem);
+  padding: clamp(.85rem, 1.6vw, 1.25rem);
+  border-color: #718297;
+  border-radius: .75rem;
+  background: #202c39;
+  box-shadow: 0 .5rem 1.25rem rgb(4 11 18 / .25);
+}
+
+@supports (backdrop-filter: blur(1px)) {
+  .product-previews .supply-product-card { background: linear-gradient(145deg, #2d3a48b8, #17212ee8); }
+  @media (width >= 62rem) {
+    .product-previews .supply-product-card { backdrop-filter: blur(4px); }
+  }
+}
+
+.product-previews .product-photo {
+  border: 1px solid #8795a1;
+  border-radius: .4rem;
+  background: #172432;
+}
+
+.product-previews .product-card-copy { display: flex; flex-direction: column; align-items: flex-start; align-self: stretch; }
+.product-previews .product-card-copy h3 { font-size: clamp(1.05rem, 1.4vw, 1.2rem); }
+.product-previews .product-card-copy p { margin-block: .45rem .35rem; line-height: 1.52; }
+.product-portfolio .text-link { color: #ffdc78; text-decoration-color: currentColor; text-underline-offset: .22em; }
+.product-previews .product-spec-link { margin-top: auto; }
+.product-portfolio .portfolio-detail-link { margin-top: 1.2rem; }
+.product-portfolio .text-link:hover { color: #fff1c9; }
+.product-portfolio .text-link:focus-visible { outline-color: #ffdc78; border-radius: .16rem; }
+.product-previews .supply-product-card:is(:hover, :focus-within) {
+  border-color: #d7b670;
+  box-shadow: 0 .75rem 1.5rem rgb(4 11 18 / .35);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .product-previews .supply-product-card { transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+  .product-previews .product-spec-link svg { transition: transform .2s ease; }
+  .product-previews .product-spec-link:is(:hover, :focus-visible) svg { transform: translateX(.22rem); }
+  @media (hover: hover) {
+    .product-previews .supply-product-card:hover { transform: translateY(-3px); }
+    .product-previews .supply-product-card:hover img { transform: scale(1.035); }
+  }
+}
+
 .product-grid.product-catalogue { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .product-specs { margin-top: .65rem; }
 .product-specs summary {
@@ -183,6 +247,8 @@
   .editorial-hero .hero-copy h1 { font-size: clamp(2.05rem, 7vw, 3.2rem); }
   .intro-photo { aspect-ratio: 1.85; }
   .about-preview .section-split > .intro-photo { grid-row: 2; }
+  .product-portfolio .portfolio-intro { gap: .8rem; }
+  .product-portfolio .section-description { font-size: 1.025rem; line-height: 1.6; }
   .product-grid.editorial-products, .tyre-section .section-split { grid-template-columns: minmax(0, 1fr); }
   .editorial-products .supply-product-card { grid-template-columns: clamp(3.65rem, 21vw, 5.4rem) minmax(0, 1fr); }
   .tyre-photo { max-width: 27rem; }
