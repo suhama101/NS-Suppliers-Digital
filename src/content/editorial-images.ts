@@ -4,13 +4,16 @@ import type { Service } from "./services";
 export type EditorialImage = { file: string; alt: string };
 
 export const warehouseImage = { file: "warehouse", alt: "Illustrative view down an industrial warehouse aisle with storage racks and stacked cartons" };
+export const aboutMachineryImage = { file: "about-machinery", alt: "CNC lathe in an industrial machine shop" };
+export const procurementPlanningImage = { file: "planning", alt: "Illustrative planning desk with a technical drawing and shipping supplies" };
 export const tyreImage = { file: "tyres", alt: "Illustrative close-up of heavy-vehicle tyre treads" };
 
 export const serviceImages = {
   "general-order-supply": { file: "supply", alt: "Illustrative industrial storage shelves with boxes and workshop supplies" },
-  "industrial-construction-supplies": { file: "workshop", alt: "Illustrative workshop with power tools and construction hardware" },
-  "procurement-project-support": { file: "planning", alt: "Illustrative planning desk with a technical drawing and shipping supplies" },
-  "it-services": { file: "workstation", alt: "Illustrative workstation with a monitor and laptop" },
+  "industrial-construction-supplies": { file: "construction-equipment", alt: "Yellow excavator at a construction site" },
+  "procurement-project-support": { file: "enterprise-switches", alt: "Ethernet cables connected to rack-mounted network switching hardware" },
+  "it-services": { file: "network-infrastructure", alt: "Enterprise server rack with network hardware and cabling" },
+  "digital-marketing": { file: "digital-marketing", alt: "Analytics graph displayed on a laptop screen" },
 } satisfies Record<Service["slug"], EditorialImage>;
 
 export const productImages = {

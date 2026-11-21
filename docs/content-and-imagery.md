@@ -19,13 +19,13 @@ The source is the supplied 12-page `Noshirwan_Sons_Company_Profile_Corrected.pdf
 | 11 | Registered business information, NTN, office address, phones, email and commitment | About shows NTN 7927069-4 and the company commitment. Contact and the footer follow the letterhead transcription with the Step 22 client-confirmed email correction. Maps awaits verification of the exact pin. |
 | 12 | Corporate signatory block | Retained in the source PDF. Website content omits the signature block and makes no signatory claim. |
 
-The profile provides no concrete IT offerings. The IT Services page continues to indicate that its scope is awaiting approval. The Blog publishes approved articles only.
+The client subsequently approved five IT Services categories and the Digital Marketing service category. The Blog publishes approved articles only.
 
 ## Artwork and asset provenance
 
 - `public/images/ns-profile-mark.png` is an isolated crop of the client-supplied PDF cover mark. The favicon and sharing card incorporate that source artwork. Request an original vector or higher-resolution master for future use and confirm final brand sign-off.
-- All assets in `public/images/industrial/` are original AI-generated editorial illustrations created using the built-in OpenAI ImageGen tool. They depict generic equipment and settings. The footer and image alternative text disclose their illustrative use. [OpenAI Terms of Use](https://openai.com/policies/terms-of-use/)
-- Each generated file is served locally as WebP. The warehouse uses separate desktop and mobile crops. The service and product sheets were cropped into individual files. No reference-site photos or external stock assets were used.
+- The original assets listed below in `public/images/industrial/` are AI-generated editorial illustrations created using the built-in OpenAI ImageGen tool. They depict generic equipment and settings. The footer and image alternative text disclose their illustrative use. [OpenAI Terms of Use](https://openai.com/policies/terms-of-use/)
+- Each generated file is served locally as WebP. The warehouse uses separate desktop and mobile crops. The service and product sheets were cropped into individual files. The new stock photographs are listed separately below.
 
 | Asset files under `public/images/industrial/` | Subject |
 | --- | --- |
@@ -34,6 +34,18 @@ The profile provides no concrete IT offerings. The IT Services page continues to
 | `power-tools.webp`, `hand-tools.webp`, `lifting.webp`, `paints.webp` | Power tools, hand tools, lifting gear and finishing materials |
 | `packaging.webp`, `lubricants.webp`, `fasteners.webp`, `electrical-plumbing.webp` | Packaging, lubricants, fasteners and electrical/plumbing supplies |
 | `safety.webp`, `raw-materials.webp`, `spares.webp`, `tyres.webp` | PPE, steel stock, mechanical spares and heavy-vehicle tyres |
+
+## Homepage and service stock images
+
+The following Pexels assets are illustrative and served locally as optimized WebP under the [Pexels License](https://www.pexels.com/license/), which permits commercial use and editing without required attribution.
+
+| Local WebP under `public/images/industrial/` | Use and source |
+| --- | --- |
+| `about-machinery.webp` | Homepage About Us. [Industrial CNC Lathe in a Busy Machine Shop](https://www.pexels.com/photo/industrial-cnc-lathe-in-a-busy-machine-shop-28929510/) |
+| `construction-equipment.webp` | Industrial & Construction Supplies. [Yellow Excavator at Urban Construction Site](https://www.pexels.com/photo/yellow-excavator-at-urban-construction-site-30751525/) |
+| `enterprise-switches.webp` | Procurement & Installation card. [Ethernet Cables Plugged on a Server Rack](https://www.pexels.com/photo/ethernet-cables-plugged-on-a-server-rack-1054397/) |
+| `network-infrastructure.webp` | IT Services card and detail hero. [Network Servers on an Enclosure](https://www.pexels.com/photo/network-servers-on-an-enclosure-6466141/) |
+| `digital-marketing.webp` | Digital Marketing card and detail hero. [Graph on Laptop Screen](https://www.pexels.com/photo/graph-on-laptop-screen-3861957/) |
 
 ## Industrial Supply Portfolio video register
 
@@ -46,6 +58,8 @@ These three Mixkit clips illustrate industrial equipment and logistics. The foot
 | `public/videos/industrial/handling.mp4` | [Cranes working on unloading dock](https://mixkit.co/free-stock-video/cranes-working-on-unloading-dock-4012/) | 10 s | 1,069,136 | 35,560 |
 
 The exported clips are silent, 960 × 540 H.264 MP4s at 25 fps with the metadata moved to the front for progressive playback. The construction clip was reframed to exclude readable equipment branding. The corresponding WebP stills are in `public/images/video-posters/`. The carousel starts muted playback when its frame comes into view and prepares only the next clip near the end of the current one. It defaults to a still poster when reduced motion is requested.
+
+**Homepage hero.** [Industrial metal machine](https://mixkit.co/free-stock-video/industrial-metal-machine-2238/) by Edgar Fernandez, under the [Mixkit Stock Video Free License](https://mixkit.co/license/modal/videoFree/). The local `public/videos/industrial/metal-cutting.mp4` is a silent, 9-second 960-by-540 H.264 export with progressive playback. Its matching `public/images/video-posters/metal-cutting.webp` is a frame from the same footage.
 
 The About Us hero reuses `handling.mp4` and its WebP poster. That cargo-crane clip runs as a muted decorative loop when the banner is visible and motion is permitted. No new footage or duplicative asset was added.
 

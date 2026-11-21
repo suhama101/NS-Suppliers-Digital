@@ -1,11 +1,11 @@
 import { Building2, CircleCheck, FileText, MapPin } from "lucide-react";
 import Link from "next/link";
-import { AboutHeroVideo } from "@/components/about-hero-video";
+import { AmbientHeroVideo } from "@/components/ambient-hero-video";
 import { EditorialPhoto } from "@/components/editorial-photo";
 import { InnerPageHero } from "@/components/inner-page-hero";
 import { ContactCallout, ProcurementApproach } from "@/components/supply-sections";
 import { capabilities, company } from "@/content/company";
-import { serviceImages } from "@/content/editorial-images";
+import { procurementPlanningImage } from "@/content/editorial-images";
 import { productCategories } from "@/content/products";
 import { makePageMetadata } from "@/lib/site-metadata";
 
@@ -22,7 +22,7 @@ export default function AboutPage() {
         id="about-page-title"
         title="About Us"
         description="Supply support for institutional, industrial and project procurement."
-        media={<AboutHeroVideo />}
+        media={<AmbientHeroVideo clip="/videos/industrial/handling.mp4" poster="/images/video-posters/handling.webp" />}
       />
       <div className="about-facts-band">
         <div className="site-container">
@@ -46,7 +46,7 @@ export default function AboutPage() {
       <section className="section-space" aria-labelledby="overview-title">
         <div className="site-container">
           <div className="section-split overview-with-photo">
-            <EditorialPhoto image={serviceImages["procurement-project-support"]} className="intro-photo" />
+            <EditorialPhoto image={procurementPlanningImage} className="intro-photo" />
             <div>
               <h2 id="overview-title">Company Overview</h2>
               <p className="section-description">{company.overview}</p>

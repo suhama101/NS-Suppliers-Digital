@@ -1,17 +1,20 @@
 import { MapPin } from "lucide-react";
 import Link from "next/link";
-import { EditorialPhoto } from "@/components/editorial-photo";
+import { AmbientHeroVideo } from "@/components/ambient-hero-video";
 import { ServiceCards } from "@/components/service-presentation";
 import { ProductCards } from "@/components/supply-sections";
 import { company } from "@/content/company";
-import { warehouseImage } from "@/content/editorial-images";
 import { productCategories } from "@/content/products";
 import { serviceHref } from "@/content/services";
 
 export function HomeHero() {
   return (
     <section className="home-hero editorial-hero" aria-labelledby="hero-title">
-      <EditorialPhoto image={warehouseImage} className="editorial-hero-photo" hero priority />
+      <AmbientHeroVideo
+        className="editorial-hero-photo"
+        clip="/videos/industrial/metal-cutting.mp4"
+        poster="/images/video-posters/metal-cutting.webp"
+      />
       <div className="site-container editorial-hero-inner">
         <div className="hero-copy">
           <p className="section-label">{company.name}</p>

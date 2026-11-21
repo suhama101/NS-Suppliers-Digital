@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import styles from "./about-hero-video.module.css";
+import styles from "./ambient-hero-video.module.css";
 
-const poster = "/images/video-posters/handling.webp";
-const clip = "/videos/industrial/handling.mp4";
-
-export function AboutHeroVideo() {
+export function AmbientHeroVideo({ clip, poster, className = "" }: {
+  clip: string;
+  poster: string;
+  className?: string;
+}) {
   const video = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -23,7 +24,6 @@ export function AboutHeroVideo() {
       if (!player) return;
       const token = ++attempt;
       const shouldPlay = canPlay();
-      player.autoplay = shouldPlay;
       if (!shouldPlay) {
         player.pause();
         delete player.dataset.playing;
@@ -52,6 +52,7 @@ export function AboutHeroVideo() {
     document.addEventListener("visibilitychange", update);
     player.addEventListener("playing", showVideo);
     player.addEventListener("error", showPoster);
+    player.addEventListener("pause", showPoster);
     return () => {
       ++attempt;
       observer.disconnect();
@@ -59,13 +60,13 @@ export function AboutHeroVideo() {
       document.removeEventListener("visibilitychange", update);
       player.removeEventListener("playing", showVideo);
       player.removeEventListener("error", showPoster);
-      player.autoplay = false;
+      player.removeEventListener("pause", showPoster);
       player.pause();
     };
-  }, []);
+  }, [clip]);
 
   return (
-    <div className={styles.media} aria-hidden="true" data-about-hero-video>
+    <div className={styles.media + " " + className} aria-hidden="true">
       <Image src={poster} alt="" width={960} height={540} loading="eager" fetchPriority="high" />
       <video ref={video} muted playsInline loop preload="none" />
     </div>

@@ -2,14 +2,16 @@ import type { MetadataRoute } from "next";
 import { serviceHref, services } from "@/content/services";
 import { navigation } from "@/content/site";
 import { blogHref, getPublishedArticles } from "@/lib/blog";
-import { siteOrigin } from "@/lib/site-metadata";
+import { allowSearchIndexing, siteOrigin } from "@/lib/site-metadata";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const paths = [
     ...navigation.map(({ href }) => href),
-    ...services.map(({ slug }) => serviceHref(slug)),
+    ...services
+      .filter(({ slug }) => slug !== "digital-marketing" || allowSearchIndexing)
+      .map(({ slug }) => serviceHref(slug)),
     ...getPublishedArticles().map(({ slug }) => blogHref(slug)),
   ];
 

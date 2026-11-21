@@ -42,7 +42,8 @@ src/
 | `/services/general-order-supply` | `services/[slug]/page.tsx` | Implemented |
 | `/services/industrial-construction-supplies` | `services/[slug]/page.tsx` | Implemented |
 | `/services/procurement-project-support` | `services/[slug]/page.tsx` | Implemented |
-| `/services/it-services` | `services/[slug]/page.tsx` | Implemented, content pending approval |
+| `/services/it-services` | `services/[slug]/page.tsx` | Five client-approved categories |
+| `/services/digital-marketing` | `services/[slug]/page.tsx` | Client-approved category overview |
 | `/blog` | `blog/page.tsx` | Implemented |
 | `/blog/[slug]` | `blog/[slug]/page.blog.tsx` | Generated for approved articles |
 | `/contact` | `contact/page.tsx` | Implemented |
@@ -61,11 +62,11 @@ The `.blog.tsx` page extension enables the dynamic article route only when the c
 
 Maintain product categories in `src/content/products.ts` and contact details in `src/content/site.ts`. The Contact page and footer both read from that configuration.
 
-- The office address follows the letterhead transcription. Keep `officeMapsUrl` as `null` until the client verifies the exact pin and supplies its HTTPS link. The office card offers a phone call in the meantime.
+- The office address follows the letterhead transcription. The Contact page embeds a temporary Google Maps address search. See the [client approval checklist](docs/client-approval-checklist.md) for exact pin sign-off and contact form configuration.
 - The client confirmed `noshirwan900@gmail.com` in Step 22. The Contact page, footer and quick-contact widget all read the address from `businessContact.email`.
 - Enter each verified HTTPS profile in the corresponding `officialUrl` field of `socialPlatforms`. A `null` entry links to its internal `/social/<platform>` placeholder from every surface. Those pages stay out of the sitemap and always use `noindex, follow`.
 
-Maintain service summaries in `src/content/services.ts`. When the client approves the IT scope and engagement details, populate `src/content/it-services.ts`, update the IT summary, and clear its `pendingApproval` flag.
+Maintain service summaries in `src/content/services.ts`. Maintain the approved IT service categories in `src/content/it-services.ts`.
 
 ## Future Vercel deployment
 
@@ -81,7 +82,7 @@ The site can build locally without environment variables or runtime services.
 
 The default canonical origin is `https://ns-suppliers-digital.vercel.app`. The build-time `SITE_URL` overrides it for canonical URLs, Open Graph URLs, social image URLs and the sitemap. Use the approved HTTPS origin without credentials, a path, a query or a fragment.
 
-The public review build defaults to `noindex, follow`. Its `robots.txt` allows crawling so search engines can read the HTML directive. `/sitemap.xml` is generated for every build and lists the published pages and approved articles. The review `robots.txt` omits the sitemap announcement.
+The public review build defaults to `noindex, follow`. Its `robots.txt` allows crawling so search engines can read the HTML directive. `/sitemap.xml` is generated for every build and lists the published pages and approved articles. Digital Marketing is included when indexing is enabled. The review `robots.txt` omits the sitemap announcement.
 
 After the client approves indexing:
 

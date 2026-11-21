@@ -71,4 +71,4 @@ The route abbreviations below refer to [Industrial & Construction Supplies](http
 | 11 | Our Commitment | About → Our Commitment | Complete | Clear quotations, responsive coordination and supply against the specifications and conditions agreed with each client. |
 | 12 | Proprietor / Authorized Signatory | Source document only | Missing from website by design | The source presents a signatory block. The site omits individual names and signature material. |
 
-The contact comparison uses the exact text supplied in the Step 21 brief. A separate letterhead image was unavailable for independent visual comparison. IT Services retains its approval notice because the PDF supplies no IT scope.
+The contact comparison uses the exact text supplied in the Step 21 brief. A separate letterhead image was unavailable for independent visual comparison. The client subsequently approved the five categories now published on the IT Services page.

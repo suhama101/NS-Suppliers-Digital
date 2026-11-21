@@ -1,4 +1,4 @@
-import { ClipboardCheck, Files, ListChecks, Truck } from "lucide-react";
+import { Cable, Cctv, Files, ListChecks, Network, Server, Shield, Truck } from "lucide-react";
 import Link from "next/link";
 import { ProcurementApproach, ProductCards, TyreSupply } from "@/components/supply-sections";
 import { itServiceAreas } from "@/content/it-services";
@@ -117,26 +117,47 @@ export function ProcurementSupportDetails() {
   );
 }
 
+const itServiceIcons = {
+  Networking: Network,
+  "Network Switches": Server,
+  "CCTV Systems": Cctv,
+  "Network Cables": Cable,
+  Firewalls: Shield,
+} satisfies Record<(typeof itServiceAreas)[number]["title"], typeof Network>;
+
 export function ITServicesDetails() {
   return (
     <section className="section-space" aria-labelledby="it-details-title">
       <div className="site-container">
-        <h2 id="it-details-title">Service Information</h2>
+        <h2 id="it-details-title">IT Infrastructure Services</h2>
         <ul className="service-detail-grid" role="list">
-          {itServiceAreas.map(({ title, pending, details }) => (
-            <li className="product-card" key={title}>
-              <span className="icon-tile"><ClipboardCheck size={24} aria-hidden="true" /></span>
-              <h3>{title}</h3>
-              {details.length > 0 ? (
+          {itServiceAreas.map(({ title, details }) => {
+            const Icon = itServiceIcons[title];
+            return (
+              <li className="product-card" key={title}>
+                <span className="icon-tile"><Icon size={24} aria-hidden="true" /></span>
+                <h3>{title}</h3>
                 <ul className="it-service-list">
                   {details.map((detail) => <li key={detail}>{detail}</li>)}
                 </ul>
-              ) : (
-                <p>{pending}</p>
-              )}
-            </li>
-          ))}
+              </li>
+            );
+          })}
         </ul>
+      </div>
+    </section>
+  );
+}
+
+export function DigitalMarketingDetails() {
+  return (
+    <section className="section-space service-specifications" aria-labelledby="marketing-enquiry-title">
+      <div className="site-container section-split">
+        <h2 id="marketing-enquiry-title">Discuss Your Digital Marketing Goals</h2>
+        <p className="about-copy">
+          Tell us about your business, the audience you want to reach and what you want to achieve online.
+          We review each enquiry with you to define the scope before agreeing to any work.
+        </p>
       </div>
     </section>
   );

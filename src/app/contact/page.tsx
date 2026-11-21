@@ -3,9 +3,10 @@ import Link from "next/link";
 import { ContactLinks } from "@/components/contact-links";
 import { InnerPageHero } from "@/components/inner-page-hero";
 import { company } from "@/content/company";
-import { serviceImages } from "@/content/editorial-images";
+import { procurementPlanningImage } from "@/content/editorial-images";
 import { businessContact, emailHref } from "@/content/site";
 import { makePageMetadata } from "@/lib/site-metadata";
+import { ContactForm } from "./contact-form";
 import styles from "./contact.module.css";
 
 export const metadata = makePageMetadata({
@@ -23,6 +24,9 @@ const inquiryDetails = [
 export default function ContactPage() {
   const { officeAddress, officeMapsUrl, phones, email } = businessContact;
   const primaryPhone = phones[0];
+  const addressQuery = encodeURIComponent(officeAddress.join(" ").replace(/\.$/, ""));
+  const mapsSearchUrl = officeMapsUrl ?? `https://www.google.com/maps/search/?api=1&query=${addressQuery}`;
+  const mapsEmbedUrl = `https://www.google.com/maps/embed?origin=mfe&pb=!1m2!2m1!1s${addressQuery}`;
 
   return (
     <>
@@ -30,7 +34,7 @@ export default function ContactPage() {
         id="contact-page-title"
         title="Contact Us"
         description="Get in touch to discuss industrial supply requirements, procurement inquiries or a request for quotation."
-        image={serviceImages["procurement-project-support"]}
+        image={procurementPlanningImage}
       >
         <div className="hero-actions">
           <a className="site-button button-gold" href={primaryPhone.href}>Call {primaryPhone.number}</a>
@@ -50,31 +54,36 @@ export default function ContactPage() {
                 <p>{company.businessType}</p>
                 <p>NTN {company.taxNumber}</p>
               </div>
-              {officeMapsUrl ? (
-                <a className="site-button button-gold" href={officeMapsUrl} target="_blank" rel="noopener noreferrer">
-                  Open in Google Maps<span className="sr-only"> (opens in a new tab)</span>
-                </a>
-              ) : (
-                <a className="site-button button-gold" href={primaryPhone.href}>Call to confirm location</a>
-              )}
+              <p className={styles.mapNote}>
+                Address search preview. Please call to confirm the exact office entrance before visiting.
+              </p>
+              <iframe
+                className={styles.map}
+                src={mapsEmbedUrl}
+                title="Google Maps address search for the Wah Cantt office"
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+              />
+              <a className="site-button button-gold" href={mapsSearchUrl} target="_blank" rel="noopener noreferrer">
+                Open in Google Maps<span className="sr-only"> (opens in a new tab)</span>
+              </a>
             </section>
+            <ContactForm />
+          </div>
 
-            <div className={styles.channelGrid}>
-              {phones.map(({ number, href }, index) => (
-                <section className={`${styles.card} ${styles.phoneCard}`} key={href} aria-labelledby={`phone-title-${index}`}>
-                  <span className="icon-tile"><Phone size={22} aria-hidden="true" /></span>
-                  <h3 id={`phone-title-${index}`}>{index === 0 ? "Phone" : "Alternate phone"}</h3>
-                  <a className={`text-link ${styles.contactAction}`} href={href}>{number}</a>
-                </section>
-              ))}
-              <section className={`${styles.card} ${styles.emailCard}`} aria-labelledby="email-title">
-                <span className="icon-tile"><Mail size={22} aria-hidden="true" /></span>
-                <div>
-                  <h3 id="email-title">Email</h3>
-                  <a className={`text-link ${styles.contactAction}`} href={emailHref}>{email}</a>
-                </div>
+          <div className={styles.channelGrid}>
+            {phones.map(({ number, href }, index) => (
+              <section className={styles.card} key={href} aria-labelledby={`phone-title-${index}`}>
+                <span className="icon-tile"><Phone size={22} aria-hidden="true" /></span>
+                <h3 id={`phone-title-${index}`}>{index === 0 ? "Phone" : "Alternate Phone"}</h3>
+                <a className={`text-link ${styles.contactAction}`} href={href}>{number}</a>
               </section>
-            </div>
+            ))}
+            <section className={styles.card} aria-labelledby="email-title">
+              <span className="icon-tile"><Mail size={22} aria-hidden="true" /></span>
+              <h3 id="email-title">Email</h3>
+              <a className={`text-link ${styles.contactAction}`} href={emailHref}>{email}</a>
+            </section>
           </div>
         </div>
       </section>

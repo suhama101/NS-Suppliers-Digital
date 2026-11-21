@@ -3,25 +3,26 @@ export const services = [
     slug: "general-order-supply",
     title: "General Order Supply",
     description: "Sourcing of general hardware, industrial stores and maintenance supplies against client specifications and agreed purchase terms.",
-    pendingApproval: false,
   },
   {
     slug: "industrial-construction-supplies",
     title: "Industrial & Construction Supplies",
     description: "Equipment, materials and consumables for construction sites, workshops and plant maintenance, sourced to the required specifications.",
-    pendingApproval: false,
   },
   {
     slug: "procurement-project-support",
     title: "Procurement & Installation",
     description: "Support for specification review, itemised quotations, sourcing and dispatch under agreed procurement terms.",
-    pendingApproval: false,
   },
   {
     slug: "it-services",
     title: "IT Services",
-    description: "A contact point for IT enquiries while the scope and service descriptions await client approval.",
-    pendingApproval: true,
+    description: "Networking, switches, CCTV systems, network cabling and firewalls, based on project specifications and client requirements.",
+  },
+  {
+    slug: "digital-marketing",
+    title: "Digital Marketing",
+    description: "Discuss your digital marketing goals and the scope of support for your business.",
   },
 ] as const;
 

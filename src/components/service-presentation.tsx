@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { EditorialPhoto } from "@/components/editorial-photo";
 import { InnerPageHero } from "@/components/inner-page-hero";
 import { ContactCallout } from "@/components/supply-sections";
-import { serviceImages, type EditorialImage } from "@/content/editorial-images";
+import { procurementPlanningImage, serviceImages, type EditorialImage } from "@/content/editorial-images";
 import { serviceHref, services, type Service } from "@/content/services";
 
 export function ServiceHero({ title, description, image, showBackLink = false }: {
@@ -50,17 +50,18 @@ export function ServiceCards() {
   );
 }
 
-export function ServiceDetailLayout({ service, contactTitle, children }: {
+export function ServiceDetailLayout({ service, pageTitle, contactTitle, children }: {
   service: Service;
+  pageTitle?: string;
   contactTitle?: string;
   children: ReactNode;
 }) {
   return (
     <>
       <ServiceHero
-        title={service.title}
+        title={pageTitle ?? service.title}
         description={service.description}
-        image={serviceImages[service.slug]}
+        image={service.slug === "procurement-project-support" ? procurementPlanningImage : serviceImages[service.slug]}
         showBackLink
       />
       {children}

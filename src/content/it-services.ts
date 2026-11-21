@@ -1,18 +1,22 @@
-type ITServiceArea = {
-  title: string;
-  pending: string;
-  details: readonly string[];
-};
-
-export const itServiceAreas: readonly ITServiceArea[] = [
+﻿export const itServiceAreas = [
   {
-    title: "Service scope",
-    pending: "The list of services and their descriptions are awaiting client approval.",
-    details: [],
+    title: "Networking",
+    details: ["Network infrastructure requirements", "Connectivity and related equipment", "Project-specific networking solutions"],
   },
   {
-    title: "Engagement details",
-    pending: "How to engage and what information to provide are awaiting client approval.",
-    details: [],
+    title: "Network Switches",
+    details: ["Ethernet switching equipment", "Managed and unmanaged switches where applicable", "Network connectivity hardware"],
   },
-];
+  {
+    title: "CCTV Systems",
+    details: ["CCTV cameras and supporting equipment", "Video surveillance infrastructure", "Related networking and connectivity components"],
+  },
+  {
+    title: "Network Cables",
+    details: ["Ethernet and network cabling", "Structured cabling components", "Patch cords and associated accessories"],
+  },
+  {
+    title: "Firewalls",
+    details: ["Network firewall equipment", "Perimeter security infrastructure", "Security appliances based on customer specifications"],
+  },
+] as const;

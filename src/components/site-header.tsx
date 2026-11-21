@@ -153,13 +153,12 @@ function HeaderNavigation({ pathname }: { pathname: string }) {
                       </button>
                     </div>
                     <ul className="services-dropdown" id="service-pages" hidden={!servicesOpen}>
-                      {services.map(({ slug, title, pendingApproval }) => {
+                      {services.map(({ slug, title }) => {
                         const destination = serviceHref(slug);
                         return (
                           <li key={slug}>
                             <Link href={destination} aria-current={pathname === destination ? "page" : undefined}>
                               {title}
-                              {pendingApproval && <small className="service-pending">Scope pending approval</small>}
                             </Link>
                           </li>
                         );

@@ -177,14 +177,6 @@ a:focus-visible, button:focus-visible, main:focus-visible {
 .services-dropdown a:hover, .services-dropdown a[aria-current] { background: #eef3f7; }
 .services-dropdown a[aria-current] { text-decoration: underline; }
 
-.service-pending {
-  display: block;
-  margin-top: .2rem;
-  color: var(--color-muted);
-  font-size: .875rem;
-  font-weight: 650;
-}
-
 .site-button {
   display: inline-flex;
   width: fit-content;
