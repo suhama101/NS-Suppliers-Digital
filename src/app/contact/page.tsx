@@ -19,13 +19,10 @@ const inquiryDetails = [
   "Share the delivery destination and requested timeline.",
 ];
 
-const plazaMap = {
-  placeUrl: "https://www.google.com/maps/place/Al+Behbood+Plaza/@33.7624232,72.7707618,17z/data=!3m1!4b1!4m6!3m5!1s0x38dfa6f0c3955555:0x6b47cada3d3d8161!8m2!3d33.7624232!4d72.7707618!16s%2Fg%2F11txv1v42g",
-  embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.9319927847564!2d72.7707618!3d33.7624232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfa6f0c3955555%3A0x6b47cada3d3d8161!2sAl%20Behbood%20Plaza!5e0!3m2!1sen!2s!4v1795295646123!5m2!1sen!2s",
-};
+const plazaMapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.9319927847564!2d72.7707618!3d33.7624232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfa6f0c3955555%3A0x6b47cada3d3d8161!2sAl%20Behbood%20Plaza!5e0!3m2!1sen!2s!4v1795295646123!5m2!1sen!2s";
 
 export default function ContactPage() {
-  const { officeAddress, phones, email } = businessContact;
+  const { officeAddress, officeMapsUrl, phones, email } = businessContact;
   const primaryPhone = phones[0];
 
   return (
@@ -46,14 +43,14 @@ export default function ContactPage() {
               <address className={styles.address}>{officeAddress.join(" ")}</address>
               <iframe
                 className={styles.map}
-                src={plazaMap.embedUrl}
+                src={plazaMapEmbedUrl}
                 title="Google Maps showing Al Behbood Plaza in Wah Cantt"
                 loading="lazy"
                 allowFullScreen
                 referrerPolicy="strict-origin-when-cross-origin"
               />
               <div className={styles.mapActions}>
-                <a className="site-button button-gold" href={plazaMap.placeUrl} target="_blank" rel="noopener noreferrer">
+                <a className="site-button button-gold" href={officeMapsUrl} target="_blank" rel="noopener noreferrer">
                   Open in Google Maps<span className="sr-only"> (opens in a new tab)</span>
                 </a>
                 <p className={styles.mapNote}>

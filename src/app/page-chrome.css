@@ -117,14 +117,6 @@
 
 .footer-grid h2, .footer-social h2 { color: #fff; font-size: .96rem; font-weight: 750; }
 .footer-grid h2 { margin-bottom: .42rem; }
-.footer-grid nav h2::before {
-  display: inline-block;
-  width: .82rem;
-  height: 2px;
-  margin: 0 .48rem .25em 0;
-  background: var(--color-gold);
-  content: "";
-}
 .footer-link { display: flex; min-height: 2.75rem; width: fit-content; align-items: center; padding-block: .3rem; }
 .footer-link:hover { color: #ffdc66; text-decoration: underline; text-underline-offset: .23em; }
 

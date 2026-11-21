@@ -218,7 +218,6 @@ a:focus-visible, button:focus-visible, main:focus-visible {
   text-transform: uppercase;
 }
 
-.section-label::before { width: 1.25rem; height: 2px; flex: 0 0 1.25rem; background: var(--color-gold); content: ""; }
 .hero-copy .section-label { color: var(--color-gold); }
 
 .hero-copy h1, .page-shell h1 {

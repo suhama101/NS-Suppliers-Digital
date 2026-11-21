@@ -63,7 +63,7 @@ export function SiteFooter() {
         </div>
         <div className="footer-bottom">
           <div>
-            <p className="footer-copyright">© {year} {company.name}</p>
+            <p className="footer-copyright">© {year} {company.displayName}</p>
             <small className="footer-brand-status">Industrial images and videos are illustrative stock or generated media.</small>
           </div>
           <ContactLinks variant="footer" />

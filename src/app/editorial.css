@@ -54,6 +54,10 @@
 
 .editorial-hero .hero-business { color: #edf4fa; }
 .editorial-hero .hero-location { color: #e5edf4; }
+.editorial-hero .hero-location:is(:hover, :focus-visible) {
+  text-decoration: underline;
+  text-underline-offset: .22em;
+}
 
 .intro-photo { aspect-ratio: 1.55; border-radius: .5rem; }
 .intro-photo img { object-position: center; }

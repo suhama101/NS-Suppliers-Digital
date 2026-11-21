@@ -17,7 +17,7 @@ export function InnerPageHero({ id, title, description, image, media, label, chi
       </div>
       <div className="site-container inner-page-hero-inner">
         <div className="hero-copy">
-          {label ?? <p className="section-label">{company.name}</p>}
+          {label ?? <p className="section-label">{company.displayName}</p>}
           <h1 id={id}>{title}</h1>
           <p className="hero-business">{description}</p>
           {children}

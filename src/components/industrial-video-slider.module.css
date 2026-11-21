@@ -20,15 +20,6 @@
   font-size: clamp(1.65rem, 3.4vw, 2.75rem);
 }
 
-.section .inner h2::after {
-  display: block;
-  width: 2.25rem;
-  height: 2px;
-  margin-top: .4rem;
-  background: var(--color-gold);
-  content: "";
-}
-
 .slider { margin-top: clamp(.85rem, 2.2vh, 1.35rem); }
 
 .frame {

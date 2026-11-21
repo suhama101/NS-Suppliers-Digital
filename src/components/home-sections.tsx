@@ -6,6 +6,7 @@ import { ProductCards } from "@/components/supply-sections";
 import { company } from "@/content/company";
 import { productCategories } from "@/content/products";
 import { serviceHref } from "@/content/services";
+import { businessContact } from "@/content/site";
 
 export function HomeHero() {
   return (
@@ -17,7 +18,7 @@ export function HomeHero() {
       />
       <div className="site-container editorial-hero-inner">
         <div className="hero-copy">
-          <p className="section-label">{company.name}</p>
+          <p className="section-label">{company.displayName}</p>
           <h1 id="hero-title">Industrial supply.<br /> Procurement support.</h1>
           <p className="hero-business">{company.businessType}</p>
           <div className="hero-actions">
@@ -25,7 +26,10 @@ export function HomeHero() {
             <Link href="/contact" className="site-button button-outline">Contact Us</Link>
           </div>
           <div className="hero-utilities">
-            <p className="hero-location"><MapPin size={16} aria-hidden="true" /> Based in {company.location}</p>
+            <a className="hero-location" href={businessContact.officeMapsUrl} target="_blank" rel="noopener noreferrer">
+              <MapPin size={16} aria-hidden="true" /> Based in {company.location}
+              <span className="sr-only"> View Al Behbood Plaza in Google Maps (opens in a new tab)</span>
+            </a>
             <a className="hero-portfolio-link" href="#product-portfolio">View Product Portfolio</a>
           </div>
         </div>

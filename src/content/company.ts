@@ -1,15 +1,16 @@
-const name = "M/S NOSHIRWAN & SONS";
+const displayName = "NOSHIRWAN & SONS";
 
 export const company = {
-  name,
+  name: `M/S ${displayName}`,
+  displayName,
   businessType: "Govt. Contractor & General Order Supplier",
   taxNumber: "7927069-4",
   description: "Government contractor and general order supplier based in Wah Cantt., supporting institutional, industrial and project procurement.",
   location: "Wah Cantt.",
-  overview: `${name} supports government departments, defence and industrial organisations, and infrastructure projects. The firm sources and supplies goods against client specifications, approved quotations, purchase orders and agreed contract terms.`,
+  overview: `${displayName} supports government departments, defence and industrial organisations, and infrastructure projects. The firm sources and supplies goods against client specifications, approved quotations, purchase orders and agreed contract terms.`,
   portfolioSummary: "The portfolio covers equipment and materials for construction, workshop operations, routine maintenance, worksite safety and dispatch. Industrial raw materials and spare parts are sourced against specified grades, dimensions and equipment requirements.",
   tyreSupply: "The firm can also source heavy-vehicle tyres, subject to quotation, client acceptance and availability.",
-  commitment: `${name} aims to provide clear quotations, responsive coordination and supply services that follow each client’s agreed specifications and delivery conditions.`,
+  commitment: `${displayName} aims to provide clear quotations, responsive coordination and supply services that follow each client’s agreed specifications and delivery conditions.`,
 };
 
 export const heavyVehicleTyres = {
