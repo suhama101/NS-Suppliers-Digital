@@ -1,7 +1,6 @@
 ﻿"use client";
 
 import { useRef, useState, type FormEvent } from "react";
-import { emailHref } from "@/content/site";
 import styles from "./contact.module.css";
 
 const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY?.trim();
@@ -56,12 +55,7 @@ export function ContactForm() {
 
   return (
     <section className={styles.card} aria-labelledby="enquiry-form-title">
-      <h3 className={styles.formTitle} id="enquiry-form-title">Send a Business Enquiry</h3>
-      {!accessKey && (
-        <p className={styles.formNotice} id="form-availability">
-          The online enquiry form is awaiting activation. <a className="text-link" href={emailHref}>Email us directly</a>.
-        </p>
-      )}
+      <h2 className={styles.cardTitle} id="enquiry-form-title">Send a Business Enquiry</h2>
       <form
         className={styles.form}
         action={accessKey ? endpoint : undefined}
@@ -85,12 +79,17 @@ export function ContactForm() {
           </label>
           <label>
             Message
-            <textarea name="message" rows={5} maxLength={5000} required />
+            <textarea name="message" rows={4} maxLength={5000} required />
           </label>
           <input type="checkbox" name="botcheck" value="true" hidden />
-          <button type="submit" className="site-button button-gold">
-            {status === "sending" ? "Sending…" : "Send Message"}
-          </button>
+          <div className={styles.formActions}>
+            <button type="submit" className="site-button button-gold" aria-describedby={!accessKey ? "form-availability" : undefined}>
+              {status === "sending" ? "Sending…" : "Send Message"}
+            </button>
+            {!accessKey && (
+              <p className={styles.formNote} id="form-availability">Online sending is awaiting activation.</p>
+            )}
+          </div>
         </fieldset>
         {accessKey && (
           <p className={styles.formNote} id="enquiry-privacy">

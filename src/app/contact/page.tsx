@@ -1,9 +1,7 @@
-import { ClipboardList, Mail, MapPin, Phone } from "lucide-react";
+import { ClipboardList, Mail, Phone } from "lucide-react";
 import Link from "next/link";
 import { ContactLinks } from "@/components/contact-links";
-import { InnerPageHero } from "@/components/inner-page-hero";
 import { company } from "@/content/company";
-import { procurementPlanningImage } from "@/content/editorial-images";
 import { businessContact, emailHref } from "@/content/site";
 import { makePageMetadata } from "@/lib/site-metadata";
 import { ContactForm } from "./contact-form";
@@ -21,74 +19,72 @@ const inquiryDetails = [
   "Share the delivery destination and requested timeline.",
 ];
 
+const plazaMap = {
+  placeUrl: "https://www.google.com/maps/place/Al+Behbood+Plaza/@33.7624232,72.7707618,17z/data=!3m1!4b1!4m6!3m5!1s0x38dfa6f0c3955555:0x6b47cada3d3d8161!8m2!3d33.7624232!4d72.7707618!16s%2Fg%2F11txv1v42g",
+  embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.9319927847564!2d72.7707618!3d33.7624232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfa6f0c3955555%3A0x6b47cada3d3d8161!2sAl%20Behbood%20Plaza!5e0!3m2!1sen!2s!4v1795295646123!5m2!1sen!2s",
+};
+
 export default function ContactPage() {
-  const { officeAddress, officeMapsUrl, phones, email } = businessContact;
+  const { officeAddress, phones, email } = businessContact;
   const primaryPhone = phones[0];
-  const addressQuery = encodeURIComponent(officeAddress.join(" ").replace(/\.$/, ""));
-  const mapsSearchUrl = officeMapsUrl ?? `https://www.google.com/maps/search/?api=1&query=${addressQuery}`;
-  const mapsEmbedUrl = `https://www.google.com/maps/embed?origin=mfe&pb=!1m2!2m1!1s${addressQuery}`;
 
   return (
     <>
-      <InnerPageHero
-        id="contact-page-title"
-        title="Contact Us"
-        description="Get in touch to discuss industrial supply requirements, procurement inquiries or a request for quotation."
-        image={procurementPlanningImage}
-      >
-        <div className="hero-actions">
-          <a className="site-button button-gold" href={primaryPhone.href}>Call {primaryPhone.number}</a>
-          <a className="site-button button-outline" href="#office-location">Office location</a>
-        </div>
-      </InnerPageHero>
-
-      <section className="section-space" id="office-location" aria-labelledby="contact-details-title">
+      <header className={styles.heading}>
         <div className="site-container">
-          <h2 id="contact-details-title">Contact Details</h2>
+          <h1 id="contact-page-title">Contact Us</h1>
+          <p>Get in touch to discuss industrial supplies, procurement or a request for quotation.</p>
+        </div>
+      </header>
+
+      <div className={styles.contactSection}>
+        <div className="site-container">
           <div className={styles.contactGrid}>
-            <section className={`${styles.card} ${styles.officeCard}`} aria-labelledby="office-title">
-              <span className="icon-tile"><MapPin size={24} aria-hidden="true" /></span>
-              <h3 id="office-title">Office Location</h3>
+            <ContactForm />
+            <section className={`${styles.card} ${styles.officeCard}`} id="office-location" aria-labelledby="office-title">
+              <h2 className={styles.cardTitle} id="office-title">Office Location</h2>
               <address className={styles.address}>{officeAddress.join(" ")}</address>
-              <div className={styles.registration}>
-                <p>{company.businessType}</p>
-                <p>NTN {company.taxNumber}</p>
-              </div>
-              <p className={styles.mapNote}>
-                Address search preview. Please call to confirm the exact office entrance before visiting.
-              </p>
               <iframe
                 className={styles.map}
-                src={mapsEmbedUrl}
-                title="Google Maps address search for the Wah Cantt office"
+                src={plazaMap.embedUrl}
+                title="Google Maps showing Al Behbood Plaza in Wah Cantt"
                 loading="lazy"
+                allowFullScreen
                 referrerPolicy="strict-origin-when-cross-origin"
               />
-              <a className="site-button button-gold" href={mapsSearchUrl} target="_blank" rel="noopener noreferrer">
-                Open in Google Maps<span className="sr-only"> (opens in a new tab)</span>
-              </a>
+              <div className={styles.mapActions}>
+                <a className="site-button button-gold" href={plazaMap.placeUrl} target="_blank" rel="noopener noreferrer">
+                  Open in Google Maps<span className="sr-only"> (opens in a new tab)</span>
+                </a>
+                <p className={styles.mapNote}>
+                  Map shows Al Behbood Plaza. Please call to confirm the Office No. 28 entrance.
+                </p>
+              </div>
             </section>
-            <ContactForm />
           </div>
 
           <div className={styles.channelGrid}>
             {phones.map(({ number, href }, index) => (
-              <section className={styles.card} key={href} aria-labelledby={`phone-title-${index}`}>
+              <section className={`${styles.card} ${styles.channelCard}`} key={href} aria-labelledby={`phone-title-${index}`}>
                 <span className="icon-tile"><Phone size={22} aria-hidden="true" /></span>
                 <h3 id={`phone-title-${index}`}>{index === 0 ? "Phone" : "Alternate Phone"}</h3>
                 <a className={`text-link ${styles.contactAction}`} href={href}>{number}</a>
               </section>
             ))}
-            <section className={styles.card} aria-labelledby="email-title">
+            <section className={`${styles.card} ${styles.channelCard}`} aria-labelledby="email-title">
               <span className="icon-tile"><Mail size={22} aria-hidden="true" /></span>
               <h3 id="email-title">Email</h3>
               <a className={`text-link ${styles.contactAction}`} href={emailHref}>{email}</a>
             </section>
           </div>
+          <p className={styles.registration}>
+            <span>{company.businessType}</span>
+            <span>NTN {company.taxNumber}</span>
+          </p>
         </div>
-      </section>
+      </div>
 
-      <section className={`section-space ${styles.inquiry}`} aria-labelledby="inquiry-title">
+      <section className={`${styles.secondary} ${styles.inquiry}`} aria-labelledby="inquiry-title">
         <div className="site-container section-split">
           <div>
             <h2 id="inquiry-title">Business Inquiries</h2>
@@ -108,7 +104,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="section-space" aria-labelledby="social-title">
+      <section className={styles.secondary} aria-labelledby="social-title">
         <div className="site-container">
           <h2 id="social-title">Social Media</h2>
           <ContactLinks variant="contact" />
