@@ -59,7 +59,7 @@ These three Mixkit clips illustrate industrial equipment and logistics. The foot
 
 The exported clips are silent, 960 × 540 H.264 MP4s at 25 fps with the metadata moved to the front for progressive playback. The construction clip was reframed to exclude readable equipment branding. The corresponding WebP stills are in `public/images/video-posters/`. The carousel starts muted playback when its frame comes into view and prepares only the next clip near the end of the current one. It defaults to a still poster when reduced motion is requested.
 
-**Homepage hero.** [Industrial metal machine](https://mixkit.co/free-stock-video/industrial-metal-machine-2238/) by Edgar Fernandez, under the [Mixkit Stock Video Free License](https://mixkit.co/license/modal/videoFree/). The local `public/videos/industrial/metal-cutting.mp4` is a silent, 9-second 960-by-540 H.264 export with progressive playback. Its matching `public/images/video-posters/metal-cutting.webp` is a frame from the same footage.
+**Homepage hero.** [Wide View of Modern Factory Production Line](https://www.pexels.com/video/wide-view-of-modern-factory-production-line-30715848/) by Parker Filme, under the [Pexels License](https://www.pexels.com/license/). This illustrative factory footage shows a moving wide view of machinery along a production floor. The local `public/videos/industrial/factory-production.mp4` is a silent, 8.5-second 1280-by-720 H.264 export at 24 fps with progressive playback. The first frame is served as `public/images/video-posters/factory-production.webp`.
 
 The About Us hero reuses `handling.mp4` and its WebP poster. That cargo-crane clip runs as a muted decorative loop when the banner is visible and motion is permitted. No new footage or duplicative asset was added.
 

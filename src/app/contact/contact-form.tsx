@@ -4,8 +4,8 @@ import { useRef, useState, type FormEvent } from "react";
 import { emailHref } from "@/content/site";
 import styles from "./contact.module.css";
 
-const formId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID?.trim();
-const endpoint = formId && /^[a-z0-9]+$/i.test(formId) ? `https://formspree.io/f/${formId}` : undefined;
+const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY?.trim();
+const endpoint = "https://api.web3forms.com/submit";
 
 export function ContactForm() {
   const submitting = useRef(false);
@@ -14,7 +14,7 @@ export function ContactForm() {
 
   async function sendMessage(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!endpoint || submitting.current) return;
+    if (!accessKey || submitting.current) return;
 
     const form = event.currentTarget;
     const fields = new FormData(form);
@@ -28,19 +28,21 @@ export function ContactForm() {
       return;
     }
 
+    if (!fields.get("subject")) fields.set("subject", "Business enquiry from NS Suppliers Digital");
+
     submitting.current = true;
     setStatus("sending");
 
     try {
       const response = await fetch(endpoint, {
         method: "POST",
-        headers: { Accept: "application/json" },
-        body: fields,
+        headers: { Accept: "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify(Object.fromEntries(fields)),
         credentials: "omit",
         signal: AbortSignal.timeout(20000),
       });
       const result = await response.json();
-      if (!response.ok || result.ok !== true) throw new Error("Formspree did not accept the submission");
+      if (!response.ok || result?.success !== true) throw new Error("Web3Forms did not accept the submission");
 
       form.reset();
       setStatus("success");
@@ -55,19 +57,20 @@ export function ContactForm() {
   return (
     <section className={styles.card} aria-labelledby="enquiry-form-title">
       <h3 className={styles.formTitle} id="enquiry-form-title">Send a Business Enquiry</h3>
-      {!endpoint && (
+      {!accessKey && (
         <p className={styles.formNotice} id="form-availability">
-          Online submissions are unavailable until the form service is connected. <a className="text-link" href={emailHref}>Email us directly</a>.
+          The online enquiry form is awaiting activation. <a className="text-link" href={emailHref}>Email us directly</a>.
         </p>
       )}
       <form
         className={styles.form}
-        action={endpoint}
+        action={accessKey ? endpoint : undefined}
         method="post"
         onSubmit={sendMessage}
-        aria-describedby={endpoint ? "enquiry-privacy" : "form-availability"}
+        aria-describedby={accessKey ? "enquiry-privacy" : "form-availability"}
       >
-        <fieldset className={styles.fields} disabled={!endpoint || status === "sending"}>
+        <fieldset className={styles.fields} disabled={!accessKey || status === "sending"}>
+          {accessKey && <input type="hidden" name="access_key" value={accessKey} />}
           <label>
             Full Name
             <input name="name" autoComplete="name" maxLength={120} required />
@@ -84,19 +87,19 @@ export function ContactForm() {
             Message
             <textarea name="message" rows={5} maxLength={5000} required />
           </label>
-          <input type="hidden" name="_gotcha" />
+          <input type="checkbox" name="botcheck" value="true" hidden />
           <button type="submit" className="site-button button-gold">
             {status === "sending" ? "Sending…" : "Send Message"}
           </button>
         </fieldset>
-        {endpoint && (
+        {accessKey && (
           <p className={styles.formNote} id="enquiry-privacy">
-            Your details are sent through Formspree so we can respond to your enquiry. Please omit sensitive information.
+            Your details are sent through Web3Forms so we can respond to your enquiry. Please omit sensitive information.
           </p>
         )}
         <div className={styles.formStatus} role="status" aria-live="polite" aria-atomic="true">
           {status === "sending" && "Sending your message…"}
-          {status === "success" && "Thank you. Your enquiry was submitted successfully."}
+          {status === "success" && "Thank you. Your enquiry has been submitted successfully."}
           {status === "error" && <span className={styles.formError}>{error}</span>}
         </div>
       </form>

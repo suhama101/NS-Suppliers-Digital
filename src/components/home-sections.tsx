@@ -12,8 +12,8 @@ export function HomeHero() {
     <section className="home-hero editorial-hero" aria-labelledby="hero-title">
       <AmbientHeroVideo
         className="editorial-hero-photo"
-        clip="/videos/industrial/metal-cutting.mp4"
-        poster="/images/video-posters/metal-cutting.webp"
+        clip="/videos/industrial/factory-production.mp4"
+        poster="/images/video-posters/factory-production.webp"
       />
       <div className="site-container editorial-hero-inner">
         <div className="hero-copy">
