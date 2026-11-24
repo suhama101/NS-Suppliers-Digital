@@ -9,7 +9,7 @@ import { navigation } from "@/content/site";
 import { serviceHref, services } from "@/content/services";
 
 export function SiteHeader() {
-  const pathname = usePathname();
+  const pathname = usePathname().replace(/\/$/, "") || "/";
   return <HeaderNavigation key={pathname} pathname={pathname} />;
 }
 

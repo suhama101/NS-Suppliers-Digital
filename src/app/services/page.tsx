@@ -6,7 +6,11 @@ import { makePageMetadata } from "@/lib/site-metadata";
 
 const description = "General order supply, industrial and construction supplies, and procurement support for institutional and project requirements.";
 
-export const metadata = makePageMetadata({ path: "/services", title: "Services", description });
+export const metadata = makePageMetadata({
+  path: "/services",
+  title: "Supply, Procurement & Business Services",
+  description: "Explore general order supply, industrial and construction supplies, procurement and installation, IT infrastructure and digital marketing services.",
+});
 
 export default function ServicesPage() {
   return (

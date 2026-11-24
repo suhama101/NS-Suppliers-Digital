@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import type { ReactElement } from "react";
+import { DigitalMarketingDetails } from "@/components/digital-marketing-details";
 import {
-  DigitalMarketingDetails, GeneralOrderSupplyDetails, IndustrialSuppliesDetails, ITServicesDetails, ProcurementSupportDetails,
+  GeneralOrderSupplyDetails, IndustrialSuppliesDetails, ITServicesDetails, ProcurementSupportDetails,
 } from "@/components/service-details";
 import { ServiceDetailLayout } from "@/components/service-presentation";
 import { serviceHref, services, type Service } from "@/content/services";

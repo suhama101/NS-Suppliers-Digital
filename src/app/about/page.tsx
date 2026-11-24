@@ -11,8 +11,8 @@ import { makePageMetadata } from "@/lib/site-metadata";
 
 export const metadata = makePageMetadata({
   path: "/about",
-  title: "About Us",
-  description: `Learn how ${company.name} sources industrial supplies against client specifications, approved quotations and purchase orders.`,
+  title: "About Our Supply & Procurement Business",
+  description: `Learn how ${company.displayName}, a government contractor and general order supplier in Wah Cantt, sources goods against client specifications and purchase orders.`,
 });
 
 export default function AboutPage() {

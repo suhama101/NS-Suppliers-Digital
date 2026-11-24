@@ -22,7 +22,7 @@ export const services = [
   {
     slug: "digital-marketing",
     title: "Digital Marketing",
-    description: "Discuss your digital marketing goals and the scope of support for your business.",
+    description: "Plan paid advertising, social content, SEO, websites, online stores and AI-assisted workflows around your business goals.",
   },
 ] as const;
 

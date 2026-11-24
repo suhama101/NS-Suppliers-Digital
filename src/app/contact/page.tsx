@@ -9,8 +9,8 @@ import styles from "./contact.module.css";
 
 export const metadata = makePageMetadata({
   path: "/contact",
-  title: "Contact Us",
-  description: `Contact ${company.name} for general order supply, industrial equipment and procurement inquiries. Find phone numbers and the office address.`,
+  title: "Contact & Request a Quotation",
+  description: `Contact ${company.displayName} in Wah Cantt for a quotation on general order supply, industrial equipment or procurement support. Find our phone numbers and office.`,
 });
 
 const inquiryDetails = [

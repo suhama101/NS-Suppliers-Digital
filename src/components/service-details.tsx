@@ -148,17 +148,3 @@ export function ITServicesDetails() {
     </section>
   );
 }
-
-export function DigitalMarketingDetails() {
-  return (
-    <section className="section-space service-specifications" aria-labelledby="marketing-enquiry-title">
-      <div className="site-container section-split">
-        <h2 id="marketing-enquiry-title">Discuss Your Digital Marketing Goals</h2>
-        <p className="about-copy">
-          Tell us about your business, the audience you want to reach and what you want to achieve online.
-          We review each enquiry with you to define the scope before agreeing to any work.
-        </p>
-      </div>
-    </section>
-  );
-}

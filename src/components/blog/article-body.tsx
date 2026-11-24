@@ -4,9 +4,13 @@ import type { BlogBlock, BlogInline } from "@/content/blog";
 import styles from "./blog.module.css";
 
 function ArticleText({ content }: { content: readonly BlogInline[] }) {
-  return content.map((part, index) => typeof part === "string" ? part : (
-    <Link key={index} href={part.href} className="text-link">{part.text}</Link>
-  ));
+  return content.map((part, index) => {
+    if (typeof part === "string") return part;
+    if (part.href.startsWith("https://")) {
+      return <a key={index} href={part.href} className="text-link">{part.text}</a>;
+    }
+    return <Link key={index} href={part.href} className="text-link">{part.text}</Link>;
+  });
 }
 
 function renderBlock(block: BlogBlock, index: number) {

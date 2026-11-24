@@ -1,6 +1,7 @@
 /node_modules/
 /.next/
 /out/
+/*.zip
 /.vercel/
 
 # Local audit and browser output

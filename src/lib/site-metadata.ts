@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
 import { company } from "@/content/company";
 
-export const homeTitle = `${company.name} | Industrial Supply & Procurement`;
+export const homeTitle = `${company.displayName} | Industrial Supply & Procurement`;
 
-export const siteOrigin = new URL(process.env.SITE_URL?.trim() || "https://ns-suppliers-digital.vercel.app");
-export const allowSearchIndexing = process.env.SITE_INDEXABLE === "true";
+const officialOrigin = "https://www.noshirwantraders.com";
+export const siteOrigin = new URL(process.env.SITE_URL?.trim() || officialOrigin);
+export const allowSearchIndexing = process.env.SITE_INDEXABLE === "true" && siteOrigin.origin === officialOrigin;
 
 if (siteOrigin.protocol !== "https:" || siteOrigin.href !== `${siteOrigin.origin}/`) {
   throw new Error("SITE_URL must be an HTTPS site origin with no path, credentials, query or fragment.");
+}
+
+export function pageUrl(path: string) {
+  return new URL(path.endsWith("/") ? path : `${path}/`, siteOrigin);
 }
 
 const socialImage = {
@@ -26,7 +31,7 @@ type PageMetadata = {
 
 export function makePageMetadata({ path, title, description, article }: PageMetadata): Metadata {
   const socialTitle = path === "/" ? title : `${title} | ${company.name}`;
-  const url = new URL(path, siteOrigin);
+  const url = pageUrl(path);
   const social = { title: socialTitle, description };
   const share = { ...social, siteName: company.name, locale: "en_PK", url, images: [socialImage] };
 

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { InnerPageHero } from "@/components/inner-page-hero";
-import { company } from "@/content/company";
 import { ArticleCard } from "@/components/blog/article-card";
 import { ArticleEmptyState } from "@/components/blog/article-empty-state";
 import { ArticleListing } from "@/components/blog/article-listing";
@@ -10,9 +9,12 @@ import { getPublishedArticles } from "@/lib/blog";
 import { makePageMetadata } from "@/lib/site-metadata";
 
 const title = "Insights & Updates";
-const description = `The ${company.name} blog focuses on industrial supplies, procurement, construction equipment and technology.`;
 
-export const metadata = makePageMetadata({ path: "/blog", title, description });
+export const metadata = makePageMetadata({
+  path: "/blog",
+  title: "Industrial Supply & Procurement Blog",
+  description: "Practical guides for industrial buyers, contractors and procurement teams on equipment selection, sourcing and project supply.",
+});
 
 export default function BlogPage() {
   const cards = getPublishedArticles().map((article) => ({

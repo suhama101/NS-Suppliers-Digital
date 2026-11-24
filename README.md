@@ -68,25 +68,19 @@ Maintain product categories in `src/content/products.ts` and contact details in 
 
 Maintain service summaries in `src/content/services.ts`. Maintain the approved IT service categories in `src/content/it-services.ts`.
 
-## Future Vercel deployment
+## DirectAdmin release
 
-1. After approval, push the source files and `package-lock.json` to the GitHub repository.
-2. Import the repository into Vercel and use the repository root and the Next.js framework preset.
-3. Use Node.js 24.x and the preset’s default build and output settings. The build runs `npm run build` and generates the static export in `out/`.
-
-The site can build locally without environment variables or runtime services.
-
-[Vercel Git deployment guide](https://vercel.com/docs/git) · [Next.js static export guide](https://nextjs.org/docs/app/guides/static-exports)
+The official site is served from `domains/noshirwantraders.com/public_html`. Follow the [manual release guide](docs/directadmin-release.md) to build, back up, upload and verify an approved update. Check any existing Git-connected deployment before pushing to `main`.
 
 ## Search and sharing configuration
 
-The default canonical origin is `https://ns-suppliers-digital.vercel.app`. The build-time `SITE_URL` overrides it for canonical URLs, Open Graph URLs, social image URLs and the sitemap. Use the approved HTTPS origin without credentials, a path, a query or a fragment.
+The default canonical origin is `https://www.noshirwantraders.com`. The build-time `SITE_URL` overrides it for canonical URLs, Open Graph URLs, social image URLs and the sitemap. Use an HTTPS origin without credentials, a path, a query or a fragment.
 
-The public review build defaults to `noindex, follow`. Its `robots.txt` allows crawling so search engines can read the HTML directive. `/sitemap.xml` is generated for every build and lists the published pages and approved articles. Digital Marketing is included when indexing is enabled. The review `robots.txt` omits the sitemap announcement.
+Review builds default to `noindex, follow`. Their `robots.txt` allows crawling so search engines can read the HTML directive and omits the sitemap announcement. The release sitemap lists public pages and approved articles. Social placeholders stay out of the sitemap and remain `noindex, follow`.
 
 After the client approves indexing:
 
-1. Set `SITE_INDEXABLE=true` for the production build. Keep it unset for review or preview builds. Set `SITE_URL` if the client has approved a new canonical domain.
+1. Set `SITE_INDEXABLE=true` for the official-domain production build. Keep it unset for review or preview builds.
 2. Build and deploy the approved release. Verify the public HTML has `index, follow`, check for any conflicting `X-Robots-Tag` headers, and confirm that canonical tags and the `robots.txt` sitemap URL use the intended origin.
 3. Verify the live `/sitemap.xml` and submit it through the client's search console if configured.
 
