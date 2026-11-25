@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageShell } from "@/components/page-shell";
+import { SocialLink } from "@/components/social-link";
 import { socialPlatforms } from "@/content/site";
 import { makePageMetadata } from "@/lib/site-metadata";
 
-const description = "Official profile link coming soon.";
+const description = "Find NOSHIRWAN & SONS on this social platform.";
 type SocialPageProps = { params: Promise<{ platform: string }> };
 
 export const dynamicParams = false;
@@ -30,10 +31,11 @@ export async function generateMetadata({ params }: SocialPageProps): Promise<Met
 }
 
 export default async function SocialPage({ params }: SocialPageProps) {
-  const { name } = await getPlatform(params);
+  const platform = await getPlatform(params);
   return (
-    <PageShell title={name} description={description}>
+    <PageShell title={platform.name} description={description}>
       <div className="shell-links">
+        <SocialLink platform={platform} className="site-button button-gold" showName />
         <Link className="site-button button-gold" href="/">Back to Website</Link>
       </div>
     </PageShell>

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { SocialIcon } from "@/components/social-icon";
 import type { SocialPlatform } from "@/content/site";
 
@@ -8,16 +7,11 @@ export function SocialLink({ platform, className, showName = false }: {
   showName?: boolean;
 }) {
   const { id, name, officialUrl } = platform;
-  const children = (
-    <>
+  return (
+    <a className={className} href={officialUrl} target="_blank" rel="noopener noreferrer" data-platform={id}>
       <SocialIcon id={id} />
       <span className={showName ? undefined : "sr-only"}>{name}</span>
-      {officialUrl && <span className="sr-only"> (opens in a new tab)</span>}
-    </>
+      <span className="sr-only"> (opens in a new tab)</span>
+    </a>
   );
-
-  if (officialUrl) {
-    return <a className={className} href={officialUrl} target="_blank" rel="noopener noreferrer" data-platform={id}>{children}</a>;
-  }
-  return <Link className={className} href={`/social/${id}`} prefetch={false} data-platform={id}>{children}</Link>;
 }

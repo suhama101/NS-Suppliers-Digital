@@ -3,7 +3,7 @@ import { CoreServices, HomeHero, ProductHighlights } from "@/components/home-sec
 import { IndustrialVideoSlider } from "@/components/industrial-video-slider";
 import { ContactCallout, ProcurementApproach, TyreSupply } from "@/components/supply-sections";
 import { company } from "@/content/company";
-import { businessContact } from "@/content/site";
+import { businessContact, socialPlatforms } from "@/content/site";
 import { homeTitle, makePageMetadata, pageUrl, siteOrigin } from "@/lib/site-metadata";
 
 export const metadata = makePageMetadata({
@@ -18,6 +18,7 @@ const organization = {
   "@id": new URL("/#organization", siteOrigin).href,
   name: company.displayName,
   url: pageUrl("/").href,
+  sameAs: socialPlatforms.map(({ officialUrl }) => officialUrl),
   description: company.description,
   email: businessContact.email,
   telephone: businessContact.phones.map(({ href }) => href.slice(4)),

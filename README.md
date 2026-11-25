@@ -64,7 +64,7 @@ Maintain product categories in `src/content/products.ts` and contact details in 
 
 - The office address follows the letterhead transcription. The Contact page embeds a temporary Google Maps address search. See the [client approval checklist](docs/client-approval-checklist.md) for exact pin sign-off and contact form configuration.
 - The client confirmed `noshirwan900@gmail.com` in Step 22. The Contact page, footer and quick-contact widget all read the address from `businessContact.email`.
-- Enter each verified HTTPS profile in the corresponding `officialUrl` field of `socialPlatforms`. A `null` entry links to its internal `/social/<platform>` placeholder from every surface. Those pages stay out of the sitemap and always use `noindex, follow`.
+- Update the approved HTTPS profiles in `socialPlatforms`. Social links open the official profiles directly, and the same URLs populate the Organization structured data. The existing `/social/<platform>` pages also link to the profiles and stay out of the sitemap with `noindex, follow`.
 
 Maintain service summaries in `src/content/services.ts`. Maintain the approved IT service categories in `src/content/it-services.ts`.
 

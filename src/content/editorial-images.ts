@@ -16,6 +16,14 @@ export const serviceImages = {
   "digital-marketing": { file: "digital-marketing", alt: "Analytics graph displayed on a laptop screen" },
 } satisfies Record<Service["slug"], EditorialImage>;
 
+export const serviceCardImages = {
+  ...serviceImages,
+  "digital-marketing": {
+    file: "digital-marketing-social-media",
+    alt: "Digital marketing and social media management across online platforms",
+  },
+} satisfies Record<Service["slug"], EditorialImage>;
+
 export const productImages = {
   "power-tools-construction-machinery": { file: "power-tools", alt: "Illustrative power tools, including a drill and saw" },
   "hand-tools-workshop-equipment": { file: "hand-tools", alt: "Illustrative hand tools, including spanners and screwdrivers" },

@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { EditorialPhoto } from "@/components/editorial-photo";
 import { InnerPageHero } from "@/components/inner-page-hero";
 import { ContactCallout } from "@/components/supply-sections";
-import { procurementPlanningImage, serviceImages, type EditorialImage } from "@/content/editorial-images";
+import { procurementPlanningImage, serviceCardImages, serviceImages, type EditorialImage } from "@/content/editorial-images";
 import { serviceHref, services, type Service } from "@/content/services";
 
 export function ServiceHero({ title, description, image, showBackLink = false }: {
@@ -34,7 +34,7 @@ export function ServiceCards() {
       {services.map(({ slug, title, description }) => (
         <li key={slug}>
           <article className="service-card">
-            <EditorialPhoto image={serviceImages[slug]} className="service-card-photo" />
+            <EditorialPhoto image={serviceCardImages[slug]} className="service-card-photo" />
             <div className="editorial-service-copy">
               <h3>{title}</h3>
               <p>{description}</p>

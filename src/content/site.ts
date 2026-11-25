@@ -23,13 +23,13 @@ export const businessContact: BusinessContact = {
 };
 
 export type SocialPlatformId = "instagram" | "facebook" | "linkedin" | "youtube";
-export type SocialPlatform = { id: SocialPlatformId; name: string; officialUrl: `https://${string}` | null };
+export type SocialPlatform = { id: SocialPlatformId; name: string; officialUrl: `https://${string}` };
 
 export const socialPlatforms: readonly SocialPlatform[] = [
-  { id: "instagram", name: "Instagram", officialUrl: null },
-  { id: "facebook", name: "Facebook", officialUrl: null },
-  { id: "linkedin", name: "LinkedIn", officialUrl: null },
-  { id: "youtube", name: "YouTube", officialUrl: null },
+  { id: "instagram", name: "Instagram", officialUrl: "https://www.instagram.com/noshirwan.sons/" },
+  { id: "facebook", name: "Facebook", officialUrl: "https://www.facebook.com/noshirwantraders/" },
+  { id: "linkedin", name: "LinkedIn", officialUrl: "https://www.linkedin.com/in/noshirwan-traders/" },
+  { id: "youtube", name: "YouTube", officialUrl: "https://www.youtube.com/@NoshirwanTraders" },
 ];
 
 export const emailHref = `mailto:${businessContact.email}`;
